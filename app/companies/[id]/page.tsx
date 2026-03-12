@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { notFound } from 'next/navigation'
 
 // 業者データ
@@ -6,6 +7,7 @@ const companiesData: Record<string, any> = {
   'ticket-center': {
     name: 'チケットセンター',
     url: 'https://ticket-center.jp/',
+    image: '/images/companies/ticket-center.png',
     description: 'ご不要になった金券を、チケットセンターならどこよりも高く買い取ります。商品の写真を撮影し、後日郵送が可能な買取サービスもございますので、お客様の好きなタイミングで手続きできるのもおすすめです。',
     buyingMethods: [
       {
@@ -40,6 +42,7 @@ const companiesData: Record<string, any> = {
   'sheep-ticket': {
     name: 'シープチケット',
     url: 'https://s-ticket-a-bce.net/',
+    image: '/images/companies/sheep-ticket.png',
     description: 'ご不要になった商品券・金券・ギフト券・収入印紙などを、どこよりも早く、そして高く買取いたします。手続きはスマホ1つあればOK、即日お振込みも可能になります。',
     buyingMethods: [
       {
@@ -82,6 +85,7 @@ const companiesData: Record<string, any> = {
   'turtle-ticket': {
     name: 'タートルチケット',
     url: 'https://turtle-ticket.com/',
+    image: '/images/companies/turtle-ticket.png',
     description: '不要な商品券やギフト券をお持ちでしたら『TURTLE TICKET タートルチケット』にお任せください。当社の買取サービスなら、迅速な査定と高額買取、そして即日振込でお客様に満足していただけるサービスをお約束します！',
     buyingMethods: [
       {
@@ -121,6 +125,7 @@ const companiesData: Record<string, any> = {
   'reset-ticket': {
     name: 'リセチケット',
     url: 'https://reseticke.com/',
+    image: null, // 画像待ち
     description: 'お家や会社にいながら簡単に全国百貨店共通商品券、VJAギフトカードの買取が出来る画期的なサービス。それがリセチケットの来店不要買取です。商品券を売りたいと思ったその瞬間に、いつでもどこにいても、スマホがあればその場で買い取ります。',
     buyingMethods: [
       {
@@ -209,6 +214,18 @@ export default async function CompanyPage({ params }: Props) {
 
         {/* 概要 */}
         <section className="bg-white p-6 rounded-lg shadow-md mb-8">
+          {company.image && (
+            <div className="mb-6 flex justify-center">
+              <Image
+                src={company.image}
+                alt={company.name}
+                width={640}
+                height={383}
+                className="rounded-lg"
+                unoptimized
+              />
+            </div>
+          )}
           <h2 className="text-2xl font-bold mb-4">{company.name}とは？</h2>
           <p className="text-gray-700 mb-4">{company.description}</p>
           

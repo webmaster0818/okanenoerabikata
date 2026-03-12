@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 
 // 推奨業者データ
 const recommendedCompanies = [
@@ -6,6 +7,7 @@ const recommendedCompanies = [
     id: 'ticket-center',
     name: 'チケットセンター',
     url: 'https://ticket-center.jp/',
+    image: '/images/companies/ticket-center.png',
     advanceRate: '65%~',
     mailRate: '最大95%',
     speed: '即日お振込み',
@@ -21,6 +23,7 @@ const recommendedCompanies = [
     id: 'sheep-ticket',
     name: 'シープチケット',
     url: 'https://s-ticket-a-bce.net/',
+    image: '/images/companies/sheep-ticket.png',
     advanceRate: '60%',
     mailRate: '70%',
     speed: '最短5分で即日入金',
@@ -36,6 +39,7 @@ const recommendedCompanies = [
     id: 'turtle-ticket',
     name: 'タートルチケット',
     url: 'https://turtle-ticket.com/',
+    image: '/images/companies/turtle-ticket.png',
     advanceRate: '60~80%',
     mailRate: '90%',
     speed: '即査定・即振込',
@@ -51,6 +55,7 @@ const recommendedCompanies = [
     id: 'reset-ticket',
     name: 'リセチケット',
     url: 'https://reseticke.com/',
+    image: null, // 画像待ち
     advanceRate: '最大65%',
     mailRate: '最大90%',
     speed: '即日買取',
@@ -182,6 +187,18 @@ export default function Home() {
           <div className="grid md:grid-cols-2 gap-6">
             {recommendedCompanies.map((company) => (
               <div key={company.id} className="bg-white p-6 rounded-lg shadow-md">
+                {company.image && (
+                  <div className="mb-4 flex justify-center">
+                    <Image
+                      src={company.image}
+                      alt={company.name}
+                      width={640}
+                      height={383}
+                      className="rounded-lg"
+                      unoptimized
+                    />
+                  </div>
+                )}
                 <h3 className="text-xl font-bold mb-4">{company.name}</h3>
                 <div className="grid grid-cols-2 gap-4 mb-4">
                   <div>
