@@ -1,5 +1,4 @@
 @import "tailwindcss";
-@import "daisyui";
 
 :root {
   --background: #ffffff;
@@ -50,4 +49,39 @@ body {
   .comparison-table table {
     font-size: 0.875rem;
   }
+}
+
+/* Article content styles */
+.article-content h1,
+.article-content h2,
+.article-content h3,
+.article-content h4 {
+  color: #1a1a1a;
+}
+
+.article-content p {
+  color: #374151;
+}
+
+.article-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+}
+
+.article-content th,
+.article-content td {
+  border: 1px solid #e5e7eb;
+  padding: 0.75rem;
+  text-align: left;
+}
+
+.article-content th {
+  background-color: #2563eb;
+  color: white;
+  font-weight: 600;
+}
+
+.article-content tr:nth-child(even) {
+  background-color: #f9fafb;
 }
