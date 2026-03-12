@@ -91,13 +91,23 @@ export default function Home() {
     <div className="min-h-screen bg-gray-50">
       {/* ヘッダー */}
       <header className="bg-white shadow-sm">
-        <div className="container mx-auto px-4 py-6">
+        <div className="container mx-auto px-4 py-4">
           <h1 className="text-2xl md:text-3xl font-bold text-gray-900">
             お金の選び方研究所
           </h1>
           <p className="text-sm text-gray-600 mt-2">
             先払い買取サービスの比較・情報サイト
           </p>
+          
+          {/* ナビゲーション */}
+          <nav className="mt-4 border-t pt-4">
+            <ul className="flex flex-wrap gap-4 text-sm">
+              <li><Link href="/" className="text-blue-600 font-semibold">トップ</Link></li>
+              <li><Link href="/comparison" className="text-gray-700 hover:text-blue-600">業者比較</Link></li>
+              <li><Link href="/articles/what-is-advance-purchase" className="text-gray-700 hover:text-blue-600">先払い買取とは</Link></li>
+              <li><Link href="/faq" className="text-gray-700 hover:text-blue-600">よくある質問</Link></li>
+            </ul>
+          </nav>
         </div>
       </header>
 
@@ -163,6 +173,63 @@ export default function Home() {
                 ))}
               </tbody>
             </table>
+          </div>
+        </section>
+
+        {/* 業者詳細カード */}
+        <section className="mb-12">
+          <h2 className="text-2xl font-bold mb-6">各業者の詳細情報</h2>
+          <div className="grid md:grid-cols-2 gap-6">
+            {recommendedCompanies.map((company) => (
+              <div key={company.id} className="bg-white p-6 rounded-lg shadow-md">
+                <h3 className="text-xl font-bold mb-4">{company.name}</h3>
+                <div className="grid grid-cols-2 gap-4 mb-4">
+                  <div>
+                    <p className="text-sm text-gray-600">先払い買取率</p>
+                    <p className="font-bold text-blue-600">{company.advanceRate}</p>
+                  </div>
+                  <div>
+                    <p className="text-sm text-gray-600">郵送買取率</p>
+                    <p className="font-bold text-blue-600">{company.mailRate}</p>
+                  </div>
+                  <div>
+                    <p className="text-sm text-gray-600">入金スピード</p>
+                    <p className="font-semibold">{company.speed}</p>
+                  </div>
+                  <div>
+                    <p className="text-sm text-gray-600">対応商品</p>
+                    <p className="font-semibold text-sm">{company.products}</p>
+                  </div>
+                </div>
+                <div className="mb-4">
+                  <p className="text-sm font-semibold mb-2">おすすめポイント：</p>
+                  <ul className="space-y-1">
+                    {company.features.map((feature, idx) => (
+                      <li key={idx} className="text-sm text-gray-700 flex items-start">
+                        <span className="text-blue-600 mr-2">✓</span>
+                        {feature}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <div className="flex gap-3">
+                  <a 
+                    href={company.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex-1 bg-blue-600 text-white text-center px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors font-semibold"
+                  >
+                    公式サイト →
+                  </a>
+                  <Link 
+                    href={`/companies/${company.id}`}
+                    className="flex-1 bg-gray-100 text-gray-800 text-center px-4 py-2 rounded-lg hover:bg-gray-200 transition-colors font-semibold"
+                  >
+                    詳細を見る
+                  </Link>
+                </div>
+              </div>
+            ))}
           </div>
         </section>
 

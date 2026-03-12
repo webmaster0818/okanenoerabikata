@@ -186,6 +186,16 @@ export default async function CompanyPage({ params }: Props) {
           <h1 className="text-2xl md:text-3xl font-bold text-gray-900">
             {company.name}の口コミ評判・詳細情報
           </h1>
+          
+          {/* ナビゲーション */}
+          <nav className="mt-4 border-t pt-4">
+            <ul className="flex flex-wrap gap-4 text-sm">
+              <li><Link href="/" className="text-gray-700 hover:text-blue-600">トップ</Link></li>
+              <li><Link href="/comparison" className="text-gray-700 hover:text-blue-600">業者比較</Link></li>
+              <li><Link href="/articles/what-is-advance-purchase" className="text-gray-700 hover:text-blue-600">先払い買取とは</Link></li>
+              <li><Link href="/faq" className="text-gray-700 hover:text-blue-600">FAQ</Link></li>
+            </ul>
+          </nav>
         </div>
       </header>
 
@@ -262,6 +272,38 @@ export default async function CompanyPage({ params }: Props) {
             </div>
           </section>
         )}
+
+        {/* 他の業者も見る */}
+        <section className="bg-white p-6 rounded-lg shadow-md mb-8">
+          <h2 className="text-2xl font-bold mb-4">他のおすすめ業者</h2>
+          <div className="grid md:grid-cols-3 gap-4">
+            {Object.entries(companiesData)
+              .filter(([key]) => key !== id)
+              .map(([key, comp]: [string, any]) => (
+                <Link
+                  key={key}
+                  href={`/companies/${key}`}
+                  className="p-4 border-2 border-gray-200 rounded-lg hover:border-blue-600 hover:shadow-md transition-all"
+                >
+                  <h3 className="font-bold text-lg mb-2">{comp.name}</h3>
+                  <p className="text-sm text-gray-600 mb-2">
+                    先払い買取率: <span className="font-semibold text-blue-600">{companiesData[key].buyingMethods[0]?.rate || '要確認'}</span>
+                  </p>
+                  <div className="text-blue-600 text-sm font-semibold">
+                    詳細を見る →
+                  </div>
+                </Link>
+              ))}
+          </div>
+          <div className="mt-6 text-center">
+            <Link 
+              href="/comparison"
+              className="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors font-semibold"
+            >
+              全業者を比較する
+            </Link>
+          </div>
+        </section>
 
         {/* 注意喚起（下部） */}
         <div className="warning-box">

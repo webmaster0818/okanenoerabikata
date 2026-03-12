@@ -72,6 +72,15 @@ export default async function ArticlePage({ params }: Props) {
           <h1 className="text-2xl md:text-3xl font-bold text-gray-900">
             {article.title}
           </h1>
+          
+          {/* ナビゲーション */}
+          <nav className="mt-4 border-t pt-4">
+            <ul className="flex flex-wrap gap-4 text-sm">
+              <li><Link href="/" className="text-gray-700 hover:text-blue-600">トップ</Link></li>
+              <li><Link href="/comparison" className="text-gray-700 hover:text-blue-600">業者比較</Link></li>
+              <li><Link href="/faq" className="text-gray-700 hover:text-blue-600">よくある質問</Link></li>
+            </ul>
+          </nav>
         </div>
       </header>
 

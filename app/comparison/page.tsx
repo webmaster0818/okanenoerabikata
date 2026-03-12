@@ -70,6 +70,16 @@ export default function ComparisonPage() {
           <p className="text-sm text-gray-600 mt-2">
             おすすめの先払い買取業者を徹底比較
           </p>
+          
+          {/* ナビゲーション */}
+          <nav className="mt-4 border-t pt-4">
+            <ul className="flex flex-wrap gap-4 text-sm">
+              <li><Link href="/" className="text-gray-700 hover:text-blue-600">トップ</Link></li>
+              <li><Link href="/comparison" className="text-blue-600 font-semibold">業者比較</Link></li>
+              <li><Link href="/articles/what-is-advance-purchase" className="text-gray-700 hover:text-blue-600">先払い買取とは</Link></li>
+              <li><Link href="/faq" className="text-gray-700 hover:text-blue-600">FAQ</Link></li>
+            </ul>
+          </nav>
         </div>
       </header>
 

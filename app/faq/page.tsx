@@ -58,6 +58,16 @@ export default function FaqPage() {
           <p className="text-sm text-gray-600 mt-2">
             先払い買取に関するよくある質問と回答
           </p>
+          
+          {/* ナビゲーション */}
+          <nav className="mt-4 border-t pt-4">
+            <ul className="flex flex-wrap gap-4 text-sm">
+              <li><Link href="/" className="text-gray-700 hover:text-blue-600">トップ</Link></li>
+              <li><Link href="/comparison" className="text-gray-700 hover:text-blue-600">業者比較</Link></li>
+              <li><Link href="/articles/what-is-advance-purchase" className="text-gray-700 hover:text-blue-600">先払い買取とは</Link></li>
+              <li><Link href="/faq" className="text-blue-600 font-semibold">FAQ</Link></li>
+            </ul>
+          </nav>
         </div>
       </header>
 
