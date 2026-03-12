@@ -55,7 +55,7 @@ const recommendedCompanies = [
     id: 'reset-ticket',
     name: 'リセチケット',
     url: 'https://reseticke.com/',
-    image: null, // 画像待ち
+    image: '/images/companies/reset-ticket.png',
     advanceRate: '最大65%',
     mailRate: '最大90%',
     speed: '即日買取',

@@ -125,7 +125,7 @@ const companiesData: Record<string, any> = {
   'reset-ticket': {
     name: 'リセチケット',
     url: 'https://reseticke.com/',
-    image: null, // 画像待ち
+    image: '/images/companies/reset-ticket.png',
     description: 'お家や会社にいながら簡単に全国百貨店共通商品券、VJAギフトカードの買取が出来る画期的なサービス。それがリセチケットの来店不要買取です。商品券を売りたいと思ったその瞬間に、いつでもどこにいても、スマホがあればその場で買い取ります。',
     buyingMethods: [
       {
