@@ -2,7 +2,8 @@ import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import fs from 'fs'
 import path from 'path'
-import ReactMarkdown from 'react-markdown'
+import { remark } from 'remark'
+import html from 'remark-html'
 import remarkGfm from 'remark-gfm'
 
 // 記事のマッピング
@@ -41,6 +42,14 @@ export async function generateStaticParams() {
   return Object.keys(articleMap).map(slug => ({ slug }))
 }
 
+async function markdownToHtml(markdown: string) {
+  const result = await remark()
+    .use(remarkGfm)
+    .use(html, { sanitize: false })
+    .process(markdown)
+  return result.toString()
+}
+
 export default async function ArticlePage({ params }: Props) {
   const { slug } = await params
   const article = articleMap[slug]
@@ -54,8 +63,10 @@ export default async function ArticlePage({ params }: Props) {
   const filePath = path.join(articlesDir, article.file)
   
   let content = ''
+  let htmlContent = ''
   try {
     content = fs.readFileSync(filePath, 'utf-8')
+    htmlContent = await markdownToHtml(content)
   } catch (error) {
     console.error('Failed to read article:', error)
     notFound()
@@ -87,11 +98,10 @@ export default async function ArticlePage({ params }: Props) {
       <main className="container mx-auto px-4 py-8">
         {/* 記事本文 */}
         <article className="bg-white p-6 md:p-8 rounded-lg shadow-md">
-          <div className="prose prose-lg max-w-none markdown-content">
-            <ReactMarkdown remarkPlugins={[remarkGfm]}>
-              {content}
-            </ReactMarkdown>
-          </div>
+          <div 
+            className="prose prose-lg max-w-none markdown-content"
+            dangerouslySetInnerHTML={{ __html: htmlContent }}
+          />
         </article>
 
         {/* 関連記事 */}
@@ -130,7 +140,6 @@ export default async function ArticlePage({ params }: Props) {
           </div>
         </div>
       </footer>
-
     </div>
   )
 }
