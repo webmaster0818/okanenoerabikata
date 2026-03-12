@@ -2,6 +2,8 @@ import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import fs from 'fs'
 import path from 'path'
+import ReactMarkdown from 'react-markdown'
+import remarkGfm from 'remark-gfm'
 
 // 記事のマッピング
 const articleMap: Record<string, { file: string; title: string }> = {
@@ -59,35 +61,6 @@ export default async function ArticlePage({ params }: Props) {
     notFound()
   }
 
-  // Markdownを簡易的にHTMLに変換（見出しと段落のみ）
-  const htmlContent = content
-    .split('\n')
-    .map(line => {
-      if (line.startsWith('# ')) {
-        return `<h1 class="text-3xl font-bold mt-8 mb-4">${line.substring(2)}</h1>`
-      } else if (line.startsWith('## ')) {
-        return `<h2 class="text-2xl font-bold mt-6 mb-3">${line.substring(3)}</h2>`
-      } else if (line.startsWith('### ')) {
-        return `<h3 class="text-xl font-bold mt-4 mb-2">${line.substring(4)}</h3>`
-      } else if (line.startsWith('#### ')) {
-        return `<h4 class="text-lg font-semibold mt-3 mb-2">${line.substring(5)}</h4>`
-      } else if (line.startsWith('**対策KW:**')) {
-        return `<p class="text-sm text-gray-600 italic mb-4">${line}</p>`
-      } else if (line.startsWith('**注意書き:**') || line.startsWith('**本記事は')) {
-        return `<div class="bg-yellow-50 border-2 border-yellow-400 rounded-lg p-4 my-4"><p class="text-sm font-semibold text-gray-800">${line.replace(/\*\*/g, '')}</p></div>`
-      } else if (line.trim().startsWith('|')) {
-        // テーブル行をそのまま返す（後でまとめて処理）
-        return line
-      } else if (line.trim() === '') {
-        return '<br/>'
-      } else if (line.trim().startsWith('-')) {
-        return `<li class="ml-6 mb-1">${line.substring(1).trim()}</li>`
-      } else {
-        return `<p class="mb-4 leading-relaxed">${line}</p>`
-      }
-    })
-    .join('\n')
-
   return (
     <div className="min-h-screen bg-gray-50">
       {/* ヘッダー */}
@@ -104,11 +77,12 @@ export default async function ArticlePage({ params }: Props) {
 
       <main className="container mx-auto px-4 py-8">
         {/* 記事本文 */}
-        <article className="bg-white p-6 md:p-8 rounded-lg shadow-md prose prose-lg max-w-none">
-          <div 
-            dangerouslySetInnerHTML={{ __html: htmlContent }}
-            className="article-content"
-          />
+        <article className="bg-white p-6 md:p-8 rounded-lg shadow-md">
+          <div className="prose prose-lg max-w-none markdown-content">
+            <ReactMarkdown remarkPlugins={[remarkGfm]}>
+              {content}
+            </ReactMarkdown>
+          </div>
         </article>
 
         {/* 関連記事 */}
