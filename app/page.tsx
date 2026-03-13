@@ -88,6 +88,24 @@ const articles = [
     title: '先払い買取の5chで話題の即日・爆速入金の先払い買取業者厳選4選をご紹介',
     slug: '5ch-latest',
     keywords: '先払い買取 5ch 最新'
+  },
+  {
+    id: '04',
+    title: 'リセチケットの口コミ評判は？先払い買取現金優良業者を徹底解説',
+    slug: 'reset-ticket',
+    keywords: 'リセチケット、先払い買取'
+  },
+  {
+    id: '05',
+    title: 'シープチケットの口コミ評判は？先払い買取現金優良業者を徹底解説',
+    slug: 'sheep-ticket',
+    keywords: 'シープチケット、先払い買取'
+  },
+  {
+    id: '06',
+    title: 'タートルチケットの口コミ評判は？先払い買取現金優良業者を徹底解説',
+    slug: 'turtle-ticket',
+    keywords: 'タートルチケット、先払い買取'
   }
 ]
 
