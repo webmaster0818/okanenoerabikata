@@ -106,6 +106,66 @@ const articles = [
     title: 'タートルチケットの口コミ評判は？先払い買取現金優良業者を徹底解説',
     slug: 'turtle-ticket',
     keywords: 'タートルチケット、先払い買取'
+  },
+  {
+    id: '07',
+    title: 'チケットセンターの口コミ評判は？先払い買取現金優良業者を徹底解説',
+    slug: 'ticket-center',
+    keywords: 'チケットセンター、先払い買取'
+  },
+  {
+    id: '08',
+    title: '先払い買取で即日現金化！最短5分入金の優良業者4選を徹底解説',
+    slug: 'instant',
+    keywords: '先払い買取 即日'
+  },
+  {
+    id: '09',
+    title: '先払い買取で安全に現金化する方法｜優良業者の見分け方と注意点',
+    slug: 'safe',
+    keywords: '先払い買取 安全'
+  },
+  {
+    id: '10',
+    title: '先払い買取優良業者の選び方｜安心できる4社と見極めポイント',
+    slug: 'reliable',
+    keywords: '先払い買取 優良'
+  },
+  {
+    id: '11',
+    title: '先払い買取ランキング｜買取率・スピード別おすすめ業者TOP4',
+    slug: 'ranking',
+    keywords: '先払い買取 ランキング'
+  },
+  {
+    id: '12',
+    title: '先払い買取の口コミ・評判は？利用者の声とトラブル事例を徹底調査',
+    slug: 'reviews',
+    keywords: '先払い買取 口コミ'
+  },
+  {
+    id: '13',
+    title: '先払い買取おすすめ業者4選！安全性と買取率で選ぶポイント',
+    slug: 'recommended',
+    keywords: '先払い買取 おすすめ'
+  },
+  {
+    id: '14',
+    title: '先払い買取業者を徹底比較！買取率・スピード・安全性で選ぶ最適な業者',
+    slug: 'comparison',
+    keywords: '先払い買取 比較'
+  },
+  {
+    id: '15',
+    title: '先払い買取は違法？合法との違いと違法業者の見分け方を徹底解説',
+    slug: 'illegal',
+    keywords: '先払い買取 違法'
+  },
+  {
+    id: '16',
+    title: '先払い買取のトラブル事例と対処法｜被害を防ぐための完全ガイド',
+    slug: 'trouble',
+    keywords: '先払い買取 トラブル'
   }
 ]
 
