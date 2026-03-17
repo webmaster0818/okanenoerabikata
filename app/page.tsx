@@ -4,8 +4,11 @@ import Image from 'next/image'
 // 推奨業者データ
 const recommendedCompanies = [
   {
+    rank: 1,
     id: 'ticket-center',
     name: 'チケットセンター',
+    badge: '買取率No.1',
+    badgeColor: 'bg-yellow-500',
     url: 'https://ticket-center.jp/',
     image: '/images/companies/ticket-center.png',
     advanceRate: '65%~',
@@ -20,8 +23,11 @@ const recommendedCompanies = [
     ]
   },
   {
+    rank: 2,
     id: 'sheep-ticket',
     name: 'シープチケット',
+    badge: '最短5分入金',
+    badgeColor: 'bg-blue-500',
     url: 'https://s-ticket-a-bce.net/',
     image: '/images/companies/sheep-ticket.png',
     advanceRate: '60%',
@@ -36,8 +42,11 @@ const recommendedCompanies = [
     ]
   },
   {
+    rank: 3,
     id: 'turtle-ticket',
     name: 'タートルチケット',
+    badge: '高買取率',
+    badgeColor: 'bg-green-500',
     url: 'https://turtle-ticket.com/',
     image: '/images/companies/turtle-ticket.png',
     advanceRate: '60~80%',
@@ -52,8 +61,11 @@ const recommendedCompanies = [
     ]
   },
   {
+    rank: 4,
     id: 'reset-ticket',
     name: 'リセチケット',
+    badge: '24時間対応',
+    badgeColor: 'bg-purple-500',
     url: 'https://reseticke.com/',
     image: '/images/companies/reset-ticket.png',
     advanceRate: '最大65%',
@@ -224,47 +236,65 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="overflow-x-auto">
-            <table className="w-full bg-white shadow-md rounded-lg overflow-hidden">
-              <thead className="bg-blue-600 text-white">
-                <tr>
-                  <th className="px-4 py-3 text-left">業者名</th>
-                  <th className="px-4 py-3 text-left">先払い買取率</th>
-                  <th className="px-4 py-3 text-left">郵送買取率</th>
-                  <th className="px-4 py-3 text-left">スピード</th>
-                  <th className="px-4 py-3 text-left">対応商品</th>
-                  <th className="px-4 py-3 text-left">詳細</th>
-                </tr>
-              </thead>
-              <tbody>
-                {recommendedCompanies.map((company, index) => (
-                  <tr key={company.id} className={index % 2 === 0 ? 'bg-gray-50' : 'bg-white'}>
-                    <td className="px-4 py-3 font-semibold">{company.name}</td>
-                    <td className="px-4 py-3">{company.advanceRate}</td>
-                    <td className="px-4 py-3">{company.mailRate}</td>
-                    <td className="px-4 py-3">{company.speed}</td>
-                    <td className="px-4 py-3 text-sm">{company.products}</td>
-                    <td className="px-4 py-3">
-                      <Link 
-                        href={`/articles/${company.id}`}
-                        className="text-blue-600 hover:text-blue-800 underline text-sm"
-                      >
-                        詳細を見る
-                      </Link>
-                    </td>
+          <div className="bg-white rounded-lg shadow-md p-2 md:p-4">
+            <p className="text-sm text-gray-600 text-center mb-4">厳選した信頼性の高い業者を買取率・スピードで比較</p>
+            <div className="overflow-x-auto">
+              <table className="w-full">
+                <thead className="bg-blue-600 text-white">
+                  <tr>
+                    <th className="px-2 md:px-4 py-3 text-left text-sm">順位</th>
+                    <th className="px-2 md:px-4 py-3 text-left text-sm">業者名</th>
+                    <th className="px-2 md:px-4 py-3 text-left text-sm">先払い買取率</th>
+                    <th className="px-2 md:px-4 py-3 text-left text-sm">郵送買取率</th>
+                    <th className="px-2 md:px-4 py-3 text-left text-sm">入金スピード</th>
+                    <th className="px-2 md:px-4 py-3 text-left text-sm">対応商品</th>
+                    <th className="px-2 md:px-4 py-3 text-left text-sm">詳細</th>
                   </tr>
-                ))}
-              </tbody>
-            </table>
+                </thead>
+                <tbody>
+                  {recommendedCompanies.map((company) => (
+                    <tr key={company.id} className={company.rank % 2 === 1 ? 'bg-gray-50' : 'bg-white'}>
+                      <td className="px-2 md:px-4 py-3">
+                        <div className="flex items-center justify-center w-8 h-8 rounded-full bg-blue-100 text-blue-700 font-bold text-sm">
+                          {company.rank}
+                        </div>
+                      </td>
+                      <td className="px-2 md:px-4 py-3 font-semibold text-sm">{company.name}</td>
+                      <td className="px-2 md:px-4 py-3 text-sm">{company.advanceRate}</td>
+                      <td className="px-2 md:px-4 py-3 text-sm">{company.mailRate}</td>
+                      <td className="px-2 md:px-4 py-3 text-sm">{company.speed}</td>
+                      <td className="px-2 md:px-4 py-3 text-xs">{company.products}</td>
+                      <td className="px-2 md:px-4 py-3">
+                        <Link 
+                          href={`/articles/${company.id}`}
+                          className="text-blue-600 hover:text-blue-800 underline text-xs md:text-sm whitespace-nowrap"
+                        >
+                          詳細 →
+                        </Link>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            <p className="text-xs text-gray-600 mt-4 text-center">
+              ※各業者の公式サイトに掲載されている情報を引用・整理したものです。適法性・安全性・将来にわたる健全な運営を保証するものではありません。
+            </p>
           </div>
         </section>
 
         {/* 業者詳細カード */}
         <section className="mb-12">
-          <h2 className="text-2xl font-bold mb-6">各業者の詳細情報</h2>
+          <h2 className="text-2xl font-bold mb-4">各業者の詳細情報</h2>
+          <p className="text-sm text-gray-600 mb-6 text-center">スペック・特徴を詳しく比較して最適な業者を見つけましょう</p>
           <div className="grid md:grid-cols-2 gap-6">
             {recommendedCompanies.map((company) => (
-              <div key={company.id} className="bg-white p-6 rounded-lg shadow-md">
+              <div key={company.id} className="bg-white p-6 rounded-lg shadow-md relative">
+                {/* 順位バッジ */}
+                <div className="absolute top-4 left-4 flex items-center justify-center w-10 h-10 rounded-full bg-blue-600 text-white font-bold text-lg shadow-lg z-10">
+                  {company.rank}
+                </div>
+                
                 {company.image && (
                   <div className="mb-4 flex justify-center">
                     <Image
@@ -277,7 +307,14 @@ export default function Home() {
                     />
                   </div>
                 )}
-                <h3 className="text-xl font-bold mb-4">{company.name}</h3>
+                
+                <div className="flex items-center gap-3 mb-4">
+                  <h3 className="text-xl font-bold">{company.name}</h3>
+                  <span className={`${company.badgeColor} text-white text-xs px-3 py-1 rounded-full font-semibold`}>
+                    {company.badge}
+                  </span>
+                </div>
+                
                 <div className="grid grid-cols-2 gap-4 mb-4">
                   <div>
                     <p className="text-sm text-gray-600">先払い買取率</p>
@@ -296,8 +333,9 @@ export default function Home() {
                     <p className="font-semibold text-sm">{company.products}</p>
                   </div>
                 </div>
+                
                 <div className="mb-4">
-                  <p className="text-sm font-semibold mb-2">おすすめポイント：</p>
+                  <p className="text-sm font-semibold mb-2">おすすめポイント</p>
                   <ul className="space-y-1">
                     {company.features.map((feature, idx) => (
                       <li key={idx} className="text-sm text-gray-700 flex items-start">
@@ -307,6 +345,7 @@ export default function Home() {
                     ))}
                   </ul>
                 </div>
+                
                 <div className="flex gap-3">
                   <a 
                     href={company.url}
@@ -330,7 +369,8 @@ export default function Home() {
 
         {/* 記事一覧 */}
         <section className="mb-12">
-          <h2 className="text-2xl font-bold mb-6">先払い買取に関する記事</h2>
+          <h2 className="text-2xl font-bold mb-4">先払い買取に関する記事</h2>
+          <p className="text-sm text-gray-600 mb-6 text-center">業者選びのポイントやリスク対策を詳しく解説</p>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {articles.map((article) => (
               <Link 
@@ -354,7 +394,10 @@ export default function Home() {
 
         {/* 注意喚起（下部） */}
         <div className="warning-box">
-          <h3 className="font-bold mb-2">⚠️ 悪質な業者にご注意ください</h3>
+          <h3 className="font-bold mb-2 flex items-center gap-2">
+            <span className="text-2xl">🚨</span>
+            悪質な業者にご注意ください
+          </h3>
           <p className="text-sm text-gray-800">
             買取契約のキャンセルを前提としたサービスを提供し高額なキャンセル料を請求する、悪質な取り立てや個人情報を悪用するなど、先払い買取の仕組みを悪用した違法な業者が存在しています。
             こうしたトラブルを避けるためにも、利用の際は契約内容をよく確認し十分に検討を行ってください。
