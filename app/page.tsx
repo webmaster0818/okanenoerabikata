@@ -246,7 +246,7 @@ export default function Home() {
                     <td className="px-4 py-3 text-sm">{company.products}</td>
                     <td className="px-4 py-3">
                       <Link 
-                        href={`/companies/${company.id}`}
+                        href={`/articles/${company.id}`}
                         className="text-blue-600 hover:text-blue-800 underline text-sm"
                       >
                         詳細を見る
@@ -317,7 +317,7 @@ export default function Home() {
                     公式サイト →
                   </a>
                   <Link 
-                    href={`/companies/${company.id}`}
+                    href={`/articles/${company.id}`}
                     className="flex-1 bg-gray-100 text-gray-800 text-center px-4 py-2 rounded-lg hover:bg-gray-200 transition-colors font-semibold"
                   >
                     詳細を見る

@@ -163,7 +163,7 @@ export default function ComparisonPage() {
 
                   <div className="flex gap-4">
                     <Link 
-                      href={`/companies/${company.id}`}
+                      href={`/articles/${company.id}`}
                       className="text-blue-600 hover:text-blue-800 underline font-semibold"
                     >
                       詳細情報を見る →
