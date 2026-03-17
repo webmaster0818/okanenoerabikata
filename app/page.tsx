@@ -183,52 +183,253 @@ const articles = [
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen" style={{ background: 'linear-gradient(to bottom, #f8f9fa 0%, #ffffff 100%)' }}>
       {/* ヘッダー */}
-      <header className="bg-white shadow-sm">
-        <div className="container mx-auto px-4 py-4">
-          <h1 className="text-2xl md:text-3xl font-bold text-gray-900">
-            お金の選び方研究所
-          </h1>
-          <p className="text-sm text-gray-600 mt-2">
-            先払い買取サービスの比較・情報サイト
-          </p>
-          
-          {/* ナビゲーション */}
-          <nav className="mt-4 border-t pt-4">
-            <ul className="flex flex-wrap gap-4 text-sm">
-              <li><Link href="/" className="text-blue-600 font-semibold">トップ</Link></li>
-              <li><Link href="/comparison" className="text-gray-700 hover:text-blue-600">業者比較</Link></li>
-              <li><Link href="/articles/what-is-advance-purchase" className="text-gray-700 hover:text-blue-600">先払い買取とは</Link></li>
-              <li><Link href="/faq" className="text-gray-700 hover:text-blue-600">よくある質問</Link></li>
-            </ul>
-          </nav>
+      <header className="sticky top-0 z-50">
+        {/* トップアクセントバー */}
+        <div style={{ 
+          background: 'linear-gradient(90deg, #fcc419 0%, #fab005 30%, #f59f00 60%, #fcc419 100%)', 
+          height: '3px' 
+        }}></div>
+        
+        {/* メインヘッダー */}
+        <div style={{ 
+          background: 'linear-gradient(135deg, #050d1a 0%, #0f1f3d 25%, #1a3358 50%, #1e3a5f 75%, #0f1f3d 100%)',
+          borderBottom: '1px solid rgba(255,255,255,0.06)'
+        }}>
+          <div className="container mx-auto px-4">
+            <div className="flex items-center justify-between py-3">
+              <div className="flex items-center gap-3">
+                {/* ロゴアイコン */}
+                <div style={{
+                  background: 'linear-gradient(135deg, #fcc419, #f59f00)',
+                  width: '38px',
+                  height: '38px',
+                  borderRadius: '10px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  boxShadow: '0 2px 12px rgba(252,196,25,0.3)'
+                }}>
+                  <span style={{ fontSize: '18px', fontWeight: 900, color: '#0a1628' }}>¥</span>
+                </div>
+                <div>
+                  <h1 className="text-xl md:text-2xl font-bold text-white tracking-tight">
+                    お金の選び方<span style={{ color: '#fcc419' }}>研究所</span>
+                  </h1>
+                  <p className="text-[11px] md:text-xs text-gray-400 -mt-0.5 tracking-wider">
+                    MONEY CHOICE LAB — 先払い買取比較メディア
+                  </p>
+                </div>
+              </div>
+              <div className="hidden md:flex items-center gap-4">
+                <span className="text-[10px] text-gray-400 border border-gray-700 rounded-full px-3 py-1">
+                  最終更新: 2026.03.17
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        {/* ナビゲーションバー */}
+        <div style={{ 
+          background: 'linear-gradient(135deg, #1a3358, #243f6b)',
+          borderBottom: '1px solid rgba(255,255,255,0.04)'
+        }}>
+          <div className="container mx-auto px-4">
+            <nav className="py-2 overflow-x-auto">
+              <ul className="flex gap-1 text-sm whitespace-nowrap">
+                <li>
+                  <Link href="/" className="px-3 md:px-4 py-1.5 rounded-md text-white font-semibold text-xs md:text-sm" 
+                    style={{ background: 'rgba(76,110,245,0.3)' }}>
+                    トップ
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/comparison" 
+                    className="px-3 md:px-4 py-1.5 rounded-md text-gray-300 hover:text-white hover:bg-white/5 font-medium text-xs md:text-sm transition-colors">
+                    業者比較
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/articles/what-is-advance-purchase" 
+                    className="px-3 md:px-4 py-1.5 rounded-md text-gray-300 hover:text-white hover:bg-white/5 font-medium text-xs md:text-sm transition-colors">
+                    先払い買取とは
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/faq" 
+                    className="px-3 md:px-4 py-1.5 rounded-md text-gray-300 hover:text-white hover:bg-white/5 font-medium text-xs md:text-sm transition-colors">
+                    よくある質問
+                  </Link>
+                </li>
+              </ul>
+            </nav>
+          </div>
         </div>
       </header>
 
-      {/* メインコンテンツ */}
-      <main className="container mx-auto px-4 py-8">
-        {/* 注意喚起 */}
-        <div className="warning-box mb-8">
-          <p className="text-sm font-semibold text-gray-800">
-            ⚠️ 本サイトは、先払い買取サービスの利用を推奨するものではありません。あくまで情報提供と注意喚起を目的としており、取引の可否や判断は利用者ご自身の責任においておこなってください。
-          </p>
+      {/* ヒーローセクション */}
+      <section className="relative overflow-hidden" style={{
+        background: 'linear-gradient(160deg, #1e3a5f 0%, #2a4a7f 30%, #4c6ef5 60%, #5c7cfa 80%, #748ffc 100%)'
+      }}>
+        {/* 装飾エフェクト */}
+        <div className="absolute inset-0 overflow-hidden">
+          {/* 光る球体 */}
+          <div className="absolute" style={{
+            top: '-80px',
+            right: '-60px',
+            width: '400px',
+            height: '400px',
+            background: 'radial-gradient(circle, rgba(76,110,245,0.15) 0%, transparent 70%)',
+            borderRadius: '50%'
+          }}></div>
+          <div className="absolute" style={{
+            bottom: '-120px',
+            left: '-80px',
+            width: '500px',
+            height: '500px',
+            background: 'radial-gradient(circle, rgba(252,196,25,0.08) 0%, transparent 70%)',
+            borderRadius: '50%'
+          }}></div>
+          {/* グリッドパターン */}
+          <div className="absolute inset-0" style={{
+            backgroundImage: 'linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px)',
+            backgroundSize: '60px 60px'
+          }}></div>
         </div>
 
-        {/* メインキャッチ */}
-        <section className="mb-12">
-          <h2 className="text-2xl md:text-3xl font-bold text-center mb-4">
-            先払い買取とは？
-          </h2>
-          <p className="text-center text-gray-700 max-w-3xl mx-auto">
-            手元にある商品を売却する前提で、先に査定額を受け取れるサービスです。
-            急な出費で現金が必要なときなど、一時的な資金確保の手段として注目されています。
-          </p>
-        </section>
+        <div className="container mx-auto px-4 py-8 md:py-12 relative">
+          <div className="text-center max-w-3xl mx-auto">
+            {/* バッジ */}
+            <div className="inline-flex items-center gap-2 mb-5 px-4 py-1.5 rounded-full" style={{
+              background: 'linear-gradient(135deg, rgba(252,196,25,0.15), rgba(245,159,0,0.1))',
+              border: '1px solid rgba(252,196,25,0.3)',
+              backdropFilter: 'blur(8px)'
+            }}>
+              <span style={{
+                width: '6px',
+                height: '6px',
+                background: '#fcc419',
+                borderRadius: '50%',
+                boxShadow: '0 0 8px rgba(252,196,25,0.6)'
+              }}></span>
+              <span className="text-yellow-300 text-xs font-bold tracking-wider">2026年3月 最新版</span>
+            </div>
+
+            {/* タイトル */}
+            <h2 className="text-3xl md:text-4xl font-black leading-tight mb-3">
+              <span style={{
+                background: 'linear-gradient(135deg, #ffd43b 0%, #fab005 40%, #fcc419 60%, #ffe066 100%)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+                backgroundClip: 'text',
+                filter: 'drop-shadow(0 2px 8px rgba(252,196,25,0.4))'
+              }}>先払い買取</span>
+              <span style={{
+                background: 'linear-gradient(135deg, #ffffff 0%, #dbe4ff 50%, #bac8ff 100%)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+                backgroundClip: 'text',
+                filter: 'drop-shadow(0 2px 8px rgba(255,255,255,0.2))'
+              }}>とは？</span>
+            </h2>
+            <p className="text-base md:text-lg leading-relaxed max-w-xl mx-auto text-white" style={{ textShadow: '0 1px 6px rgba(0,0,0,0.15)' }}>
+              手元にある商品を売却する前提で、<span style={{ color: '#ffd43b', fontWeight: 600 }}>先に査定額を受け取れる</span>サービス。<br className="hidden md:block" />
+              急な出費で現金が必要なとき、<span style={{ color: '#ffd43b', fontWeight: 600 }}>一時的な資金確保</span>の手段として注目されています。
+            </p>
+
+            {/* 統計カード */}
+            <div className="flex flex-wrap justify-center gap-4 mt-10 mb-6">
+              <div className="flex-1 min-w-[130px] max-w-[180px] rounded-xl p-4 text-center" style={{
+                background: 'rgba(255,255,255,0.15)',
+                border: '1px solid rgba(255,255,255,0.25)',
+                backdropFilter: 'blur(12px)'
+              }}>
+                <div className="flex items-center justify-center gap-1 mb-1">
+                  <span style={{
+                    fontSize: '30px',
+                    fontWeight: 900,
+                    background: 'linear-gradient(135deg, #ffd43b, #fab005)',
+                    WebkitBackgroundClip: 'text',
+                    WebkitTextFillColor: 'transparent',
+                    backgroundClip: 'text',
+                    filter: 'drop-shadow(0 1px 3px rgba(252,196,25,0.4))'
+                  }}>4</span>
+                  <span className="text-sm font-bold" style={{ color: '#ffd43b' }}>社</span>
+                </div>
+                <p className="text-[10px] font-semibold tracking-wider text-white opacity-85">厳選業者数</p>
+              </div>
+              <div className="flex-1 min-w-[130px] max-w-[180px] rounded-xl p-4 text-center" style={{
+                background: 'rgba(255,255,255,0.15)',
+                border: '1px solid rgba(255,255,255,0.25)',
+                backdropFilter: 'blur(12px)'
+              }}>
+                <div className="flex items-center justify-center gap-0.5 mb-1">
+                  <span className="text-xs font-medium text-white opacity-85">最大</span>
+                  <span style={{
+                    fontSize: '30px',
+                    fontWeight: 900,
+                    background: 'linear-gradient(135deg, #51cf66, #22c55e)',
+                    WebkitBackgroundClip: 'text',
+                    WebkitTextFillColor: 'transparent',
+                    backgroundClip: 'text',
+                    filter: 'drop-shadow(0 1px 3px rgba(34,197,94,0.4))'
+                  }}>95</span>
+                  <span style={{ fontSize: '14px', fontWeight: 700, color: '#51cf66' }}>%</span>
+                </div>
+                <p className="text-[10px] font-semibold tracking-wider text-white opacity-85">最高買取率</p>
+              </div>
+              <div className="flex-1 min-w-[130px] max-w-[180px] rounded-xl p-4 text-center" style={{
+                background: 'rgba(255,255,255,0.15)',
+                border: '1px solid rgba(255,255,255,0.25)',
+                backdropFilter: 'blur(12px)'
+              }}>
+                <div className="flex items-center justify-center gap-0.5 mb-1">
+                  <span style={{
+                    fontSize: '30px',
+                    fontWeight: 900,
+                    background: 'linear-gradient(135deg, #74c0fc, #339af0)',
+                    WebkitBackgroundClip: 'text',
+                    WebkitTextFillColor: 'transparent',
+                    backgroundClip: 'text',
+                    filter: 'drop-shadow(0 1px 3px rgba(51,154,240,0.4))'
+                  }}>5</span>
+                  <span className="text-sm font-bold" style={{ color: '#74c0fc' }}>分</span>
+                </div>
+                <p className="text-[10px] font-semibold tracking-wider text-white opacity-85">最短入金時間</p>
+              </div>
+            </div>
+
+            {/* 注意喚起バナー */}
+            <div className="mt-6 px-4 py-3 rounded-lg" style={{
+              background: 'rgba(255,243,191,0.12)',
+              border: '1px solid rgba(255,243,191,0.3)'
+            }}>
+              <p className="text-xs text-white opacity-90">
+                ⚠️ 本サイトは先払い買取サービスの利用を推奨するものではありません。あくまで情報提供と注意喚起を目的としており、取引の可否や判断は利用者ご自身の責任においておこなってください。
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* メインコンテンツ */}
+      <main className="container mx-auto px-4 py-8">
 
         {/* おすすめ業者比較表 */}
         <section className="mb-12">
-          <h2 className="text-2xl font-bold mb-6">おすすめ先払い買取業者 TOP4</h2>
+          <div className="text-center mb-6">
+            <h2 className="text-3xl md:text-4xl font-black mb-2" style={{
+              background: 'linear-gradient(135deg, #1e3a5f, #4c6ef5)',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+              backgroundClip: 'text'
+            }}>
+              おすすめ先払い買取業者 TOP4
+            </h2>
+            <p className="text-sm text-gray-600">厳選した信頼性の高い業者を買取率・スピードで比較</p>
+          </div>
           
           <div className="bg-amber-50 border-2 border-amber-400 rounded-lg p-4 mb-4">
             <p className="text-sm text-gray-800">
@@ -285,8 +486,17 @@ export default function Home() {
 
         {/* 業者詳細カード */}
         <section className="mb-12">
-          <h2 className="text-2xl font-bold mb-4">各業者の詳細情報</h2>
-          <p className="text-sm text-gray-600 mb-6 text-center">スペック・特徴を詳しく比較して最適な業者を見つけましょう</p>
+          <div className="text-center mb-6">
+            <h2 className="text-3xl md:text-4xl font-black mb-2" style={{
+              background: 'linear-gradient(135deg, #1e3a5f, #4c6ef5)',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+              backgroundClip: 'text'
+            }}>
+              各業者の詳細情報
+            </h2>
+            <p className="text-sm text-gray-600">スペック・特徴を詳しく比較して最適な業者を見つけましょう</p>
+          </div>
           <div className="grid md:grid-cols-2 gap-6">
             {recommendedCompanies.map((company) => (
               <div key={company.id} className="bg-white p-6 rounded-lg shadow-md relative">
@@ -369,8 +579,17 @@ export default function Home() {
 
         {/* 記事一覧 */}
         <section className="mb-12">
-          <h2 className="text-2xl font-bold mb-4">先払い買取に関する記事</h2>
-          <p className="text-sm text-gray-600 mb-6 text-center">業者選びのポイントやリスク対策を詳しく解説</p>
+          <div className="text-center mb-6">
+            <h2 className="text-3xl md:text-4xl font-black mb-2" style={{
+              background: 'linear-gradient(135deg, #1e3a5f, #4c6ef5)',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+              backgroundClip: 'text'
+            }}>
+              先払い買取に関する記事
+            </h2>
+            <p className="text-sm text-gray-600">業者選びのポイントやリスク対策を詳しく解説</p>
+          </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {articles.map((article) => (
               <Link 
@@ -393,29 +612,49 @@ export default function Home() {
         </section>
 
         {/* 注意喚起（下部） */}
-        <div className="warning-box">
-          <h3 className="font-bold mb-2 flex items-center gap-2">
+        <div className="rounded-xl p-6" style={{
+          background: 'linear-gradient(135deg, #fff5f5, #ffe3e3)',
+          border: '2px solid #fca5a5'
+        }}>
+          <h3 className="font-bold mb-3 flex items-center gap-2 text-red-700">
             <span className="text-2xl">🚨</span>
             悪質な業者にご注意ください
           </h3>
-          <p className="text-sm text-gray-800">
+          <p className="text-sm text-gray-800 leading-relaxed">
             買取契約のキャンセルを前提としたサービスを提供し高額なキャンセル料を請求する、悪質な取り立てや個人情報を悪用するなど、先払い買取の仕組みを悪用した違法な業者が存在しています。
             こうしたトラブルを避けるためにも、利用の際は契約内容をよく確認し十分に検討を行ってください。
           </p>
-          <p className="text-sm text-gray-800 mt-2">
-            参考：<a href="https://www.fsa.go.jp/ordinary/chuui/cashing_chuui2.html" target="_blank" rel="noopener noreferrer" className="text-blue-600 underline">金融庁 注意喚起</a>
+          <p className="text-sm text-gray-800 mt-3">
+            参考：<a href="https://www.fsa.go.jp/ordinary/chuui/cashing_chuui2.html" target="_blank" rel="noopener noreferrer" className="text-blue-600 underline font-semibold hover:text-blue-700">金融庁 注意喚起 →</a>
           </p>
         </div>
       </main>
 
       {/* フッター */}
-      <footer className="bg-gray-800 text-white py-8 mt-12">
-        <div className="container mx-auto px-4 text-center">
-          <p className="text-sm">© 2026 お金の選び方研究所 - 先払い買取比較サイト</p>
-          <div className="mt-4 space-x-4 text-sm">
-            <Link href="/privacy" className="hover:text-gray-300">プライバシーポリシー</Link>
-            <Link href="/faq" className="hover:text-gray-300">よくある質問</Link>
-            <Link href="/comparison" className="hover:text-gray-300">比較・ランキング</Link>
+      <footer className="mt-12" style={{
+        background: 'linear-gradient(135deg, #0f1f3d, #1a3358)',
+        borderTop: '1px solid rgba(255,255,255,0.1)'
+      }}>
+        <div className="container mx-auto px-4 py-8 text-center">
+          <div className="flex items-center justify-center gap-2 mb-4">
+            <div style={{
+              background: 'linear-gradient(135deg, #fcc419, #f59f00)',
+              width: '32px',
+              height: '32px',
+              borderRadius: '8px',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center'
+            }}>
+              <span style={{ fontSize: '16px', fontWeight: 900, color: '#0a1628' }}>¥</span>
+            </div>
+            <p className="text-white font-bold">お金の選び方研究所</p>
+          </div>
+          <p className="text-sm text-gray-400 mb-4">© 2026 MONEY CHOICE LAB - 先払い買取比較メディア</p>
+          <div className="flex flex-wrap justify-center gap-4 text-sm">
+            <Link href="/privacy" className="text-gray-300 hover:text-white transition-colors">プライバシーポリシー</Link>
+            <Link href="/faq" className="text-gray-300 hover:text-white transition-colors">よくある質問</Link>
+            <Link href="/comparison" className="text-gray-300 hover:text-white transition-colors">比較・ランキング</Link>
           </div>
         </div>
       </footer>
