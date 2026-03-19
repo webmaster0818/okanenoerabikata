@@ -615,9 +615,6 @@ export default function Home() {
                 <h3 className="font-bold text-lg mb-2 line-clamp-2">
                   {article.title}
                 </h3>
-                <p className="text-sm text-gray-600 mt-2">
-                  対策KW: {article.keywords}
-                </p>
                 <div className="mt-4 text-blue-600 text-sm font-semibold">
                   続きを読む →
                 </div>
