@@ -84,6 +84,13 @@ const recommendedCompanies = [
 //記事データ
 const articles = [
   {
+    id: '00',
+    title: '先払い買取おすすめランキング【2026年最新版】｜安全な優良業者TOP4を徹底比較',
+    slug: 'recommended-ranking-2026',
+    keywords: '先払い買取 おすすめ、先払い買取 ランキング、先払い買取 最新',
+    badge: '🔥 2026年最新版'
+  },
+  {
     id: '01',
     title: '先払い買取とは？おすすめ業者や安全に即日現金化できる方法をご紹介',
     slug: 'what-is-advance-purchase',
@@ -595,8 +602,16 @@ export default function Home() {
               <Link 
                 key={article.id}
                 href={`/articles/${article.slug}`}
-                className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow"
+                className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow relative"
               >
+                {article.badge && (
+                  <div className="absolute top-3 right-3 px-2 py-1 rounded-md text-xs font-bold" style={{
+                    background: 'linear-gradient(135deg, #ffd43b, #fab005)',
+                    color: '#0a1628'
+                  }}>
+                    {article.badge}
+                  </div>
+                )}
                 <h3 className="font-bold text-lg mb-2 line-clamp-2">
                   {article.title}
                 </h3>

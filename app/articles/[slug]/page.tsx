@@ -71,6 +71,10 @@ const articleMap: Record<string, { file: string; title: string }> = {
   'trouble': {
     file: '16_先払い買取_トラブル.md',
     title: '先払い買取のトラブル事例と対処法｜被害を防ぐための完全ガイド'
+  },
+  'recommended-ranking-2026': {
+    file: '17_先払い買取_おすすめランキング最新版.md',
+    title: '先払い買取おすすめランキング【2026年最新版】｜安全な優良業者TOP4を徹底比較'
   }
 }
 
