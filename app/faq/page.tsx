@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Breadcrumb from '@/app/components/Breadcrumb'
 
 const faqs = [
   {
@@ -70,6 +71,11 @@ export default function FaqPage() {
           </nav>
         </div>
       </header>
+
+      {/* パンくずリスト */}
+      <Breadcrumb items={[
+        { name: 'よくある質問', url: '/faq' }
+      ]} />
 
       <main className="container mx-auto px-4 py-8">
         {/* 注意喚起 */}

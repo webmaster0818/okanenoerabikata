@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Breadcrumb from '@/app/components/Breadcrumb'
 
 export default function PrivacyPage() {
   return (
@@ -26,6 +27,11 @@ export default function PrivacyPage() {
           </nav>
         </div>
       </header>
+
+      {/* パンくずリスト */}
+      <Breadcrumb items={[
+        { name: 'プライバシーポリシー', url: '/privacy' }
+      ]} />
 
       <main className="container mx-auto px-4 py-8">
         <div className="bg-white p-6 md:p-8 rounded-lg shadow-md prose prose-lg max-w-none">

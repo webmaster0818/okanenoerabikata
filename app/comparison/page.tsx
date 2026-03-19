@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Breadcrumb from '@/app/components/Breadcrumb'
 
 const companies = [
   {
@@ -82,6 +83,11 @@ export default function ComparisonPage() {
           </nav>
         </div>
       </header>
+
+      {/* パンくずリスト */}
+      <Breadcrumb items={[
+        { name: '業者比較・ランキング', url: '/comparison' }
+      ]} />
 
       <main className="container mx-auto px-4 py-8">
         {/* 注意喚起 */}

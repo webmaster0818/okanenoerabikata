@@ -5,6 +5,7 @@ import path from 'path'
 import { remark } from 'remark'
 import html from 'remark-html'
 import remarkGfm from 'remark-gfm'
+import Breadcrumb from '@/app/components/Breadcrumb'
 
 // 記事のマッピング
 const articleMap: Record<string, { file: string; title: string }> = {
@@ -116,8 +117,40 @@ export default async function ArticlePage({ params }: Props) {
     notFound()
   }
 
+  // 構造化データ: Article
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": article.title,
+    "author": {
+      "@type": "Organization",
+      "name": "お金の選び方研究所"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "お金の選び方研究所",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://8bb6ef92.okanenoerabikata-deploy.pages.dev/images/logo.png"
+      }
+    },
+    "datePublished": "2026-03-01",
+    "dateModified": "2026-03-19",
+    "description": article.title,
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": `https://8bb6ef92.okanenoerabikata-deploy.pages.dev/articles/${slug}`
+    }
+  };
+
   return (
     <div className="min-h-screen bg-gray-50">
+      {/* Article Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+      />
+
       {/* ヘッダー */}
       <header className="bg-white shadow-sm">
         <div className="container mx-auto px-4 py-6">
@@ -138,6 +171,12 @@ export default async function ArticlePage({ params }: Props) {
           </nav>
         </div>
       </header>
+
+      {/* パンくずリスト */}
+      <Breadcrumb items={[
+        { name: '記事一覧', url: '/#articles' },
+        { name: article.title, url: `/articles/${slug}` }
+      ]} />
 
       <main className="container mx-auto px-4 py-8">
         {/* 記事本文 */}
