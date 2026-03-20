@@ -222,10 +222,10 @@ export default function Home() {
                 </div>
                 <div>
                   <h1 className="text-xl md:text-2xl font-bold text-white tracking-tight">
-                    お金の選び方<span style={{ color: '#fcc419' }}>研究所</span>
+                    <span style={{ color: '#fcc419' }}>先払い買取</span>比較・おすすめ業者ガイド
                   </h1>
                   <p className="text-[11px] md:text-xs text-gray-400 -mt-0.5 tracking-wider">
-                    MONEY CHOICE LAB — 先払い買取比較メディア
+                    お金の選び方研究所 — 2026年最新版・優良業者厳選
                   </p>
                 </div>
               </div>
@@ -339,11 +339,11 @@ export default function Home() {
                 WebkitTextFillColor: 'transparent',
                 backgroundClip: 'text',
                 filter: 'drop-shadow(0 2px 8px rgba(255,255,255,0.2))'
-              }}>とは？</span>
+              }}>で即日現金化</span>
             </h2>
             <p className="text-base md:text-lg leading-relaxed max-w-xl mx-auto text-white" style={{ textShadow: '0 1px 6px rgba(0,0,0,0.15)' }}>
-              手元にある商品を売却する前提で、<span style={{ color: '#ffd43b', fontWeight: 600 }}>先に査定額を受け取れる</span>サービス。<br className="hidden md:block" />
-              急な出費で現金が必要なとき、<span style={{ color: '#ffd43b', fontWeight: 600 }}>一時的な資金確保</span>の手段として注目されています。
+              先払い買取は、商品券・ギフトカードを<span style={{ color: '#ffd43b', fontWeight: 600 }}>商品発送前に現金化</span>できるサービス。<br className="hidden md:block" />
+              古物商許可取得業者のみ厳選。<span style={{ color: '#ffd43b', fontWeight: 600 }}>最高買取率95%、最短5分入金</span>で急な資金ニーズに対応します。
             </p>
 
             {/* 統計カード */}
@@ -433,9 +433,9 @@ export default function Home() {
               WebkitTextFillColor: 'transparent',
               backgroundClip: 'text'
             }}>
-              おすすめ先払い買取業者 TOP4
+              先払い買取おすすめ業者 TOP4
             </h2>
-            <p className="text-sm text-gray-600">厳選した信頼性の高い業者を買取率・スピードで比較</p>
+            <p className="text-sm text-gray-600">先払い買取で安全・高買取率の優良業者を徹底比較｜古物商許可取得済</p>
           </div>
           
           <div className="bg-amber-50 border-2 border-amber-400 rounded-lg p-4 mb-4">
@@ -500,9 +500,9 @@ export default function Home() {
               WebkitTextFillColor: 'transparent',
               backgroundClip: 'text'
             }}>
-              各業者の詳細情報
+              先払い買取業者の詳細スペック
             </h2>
-            <p className="text-sm text-gray-600">スペック・特徴を詳しく比較して最適な業者を見つけましょう</p>
+            <p className="text-sm text-gray-600">先払い買取率・入金スピード・古物商許可を徹底比較</p>
           </div>
           <div className="grid md:grid-cols-2 gap-6">
             {recommendedCompanies.map((company) => (
@@ -593,9 +593,9 @@ export default function Home() {
               WebkitTextFillColor: 'transparent',
               backgroundClip: 'text'
             }}>
-              先払い買取に関する記事
+              先払い買取の完全ガイド
             </h2>
-            <p className="text-sm text-gray-600">業者選びのポイントやリスク対策を詳しく解説</p>
+            <p className="text-sm text-gray-600">先払い買取の仕組み・安全性・トラブル回避法を徹底解説</p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {articles.map((article) => (

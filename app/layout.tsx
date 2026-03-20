@@ -14,8 +14,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "お金の選び方研究所 - 先払い買取比較サイト",
-  description: "先払い買取サービスの比較・情報サイト",
+  title: "先払い買取とは？おすすめ業者比較【2026年最新版】業界最高水準95%｜お金の選び方研究所",
+  description: "先払い買取の仕組み・安全性・おすすめ優良業者4社を徹底比較。最高買取率95%、最短5分入金。古物商許可取得業者のみ厳選。違法業者の見分け方、トラブル回避法も解説。2026年最新情報。",
   robots: {
     index: false,
     follow: false,
