@@ -49,17 +49,9 @@ const articleMap: Record<string, { file: string; title: string }> = {
     file: '10_先払い買取_優良.md',
     title: '先払い買取優良業者の選び方｜安心できる4社と見極めポイント'
   },
-  'ranking': {
-    file: '11_先払い買取_ランキング.md',
-    title: '先払い買取ランキング｜買取率・スピード別おすすめ業者TOP4'
-  },
   'reviews': {
     file: '12_先払い買取_口コミ.md',
     title: '先払い買取の口コミ・評判は？利用者の声とトラブル事例を徹底調査'
-  },
-  'recommended': {
-    file: '13_先払い買取_おすすめ.md',
-    title: '先払い買取おすすめ業者4選！安全性と買取率で選ぶポイント'
   },
   'comparison': {
     file: '14_先払い買取_比較.md',

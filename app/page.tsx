@@ -151,22 +151,10 @@ const articles = [
     keywords: '先払い買取 優良'
   },
   {
-    id: '11',
-    title: '先払い買取ランキング｜買取率・スピード別おすすめ業者TOP4',
-    slug: 'ranking',
-    keywords: '先払い買取 ランキング'
-  },
-  {
     id: '12',
     title: '先払い買取の口コミ・評判は？利用者の声とトラブル事例を徹底調査',
     slug: 'reviews',
     keywords: '先払い買取 口コミ'
-  },
-  {
-    id: '13',
-    title: '先払い買取おすすめ業者4選！安全性と買取率で選ぶポイント',
-    slug: 'recommended',
-    keywords: '先払い買取 おすすめ'
   },
   {
     id: '14',
