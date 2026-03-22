@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="400" viewBox="0 0 800 400">
+  <!-- 背景 -->
+  <rect width="800" height="400" fill="#f0f4f8"/>
+  
+  <!-- 商品券カード -->
+  <g>
+    <!-- カード本体 -->
+    <rect x="150" y="80" width="500" height="240" rx="20" fill="#fff" stroke="#4c6ef5" stroke-width="4"/>
+    
+    <!-- 金額表示エリア -->
+    <rect x="180" y="110" width="200" height="80" rx="10" fill="#4c6ef5" opacity="0.1"/>
+    
+    <!-- ¥マーク -->
+    <text x="200" y="165" font-family="Arial, sans-serif" font-size="48" font-weight="bold" fill="#4c6ef5">¥</text>
+    
+    <!-- 金額 -->
+    <text x="250" y="165" font-family="Arial, sans-serif" font-size="40" font-weight="bold" fill="#333">10,000</text>
+    
+    <!-- タイトル -->
+    <text x="420" y="140" font-family="Arial, sans-serif" font-size="28" font-weight="bold" fill="#333" text-anchor="middle">商品券</text>
+    
+    <!-- サブテキスト -->
+    <text x="420" y="175" font-family="Arial, sans-serif" font-size="18" fill="#666" text-anchor="middle">Gift Card</text>
+    
+    <!-- 装飾線 -->
+    <line x1="180" y1="210" x2="620" y2="210" stroke="#e0e0e0" stroke-width="2"/>
+    
+    <!-- バーコード風装飾 -->
+    <g transform="translate(200, 230)">
+      <rect x="0" y="0" width="4" height="50" fill="#333"/>
+      <rect x="10" y="0" width="2" height="50" fill="#333"/>
+      <rect x="18" y="0" width="6" height="50" fill="#333"/>
+      <rect x="30" y="0" width="2" height="50" fill="#333"/>
+      <rect x="38" y="0" width="4" height="50" fill="#333"/>
+      <rect x="48" y="0" width="2" height="50" fill="#333"/>
+      <rect x="56" y="0" width="8" height="50" fill="#333"/>
+      <rect x="70" y="0" width="2" height="50" fill="#333"/>
+      <rect x="78" y="0" width="4" height="50" fill="#333"/>
+      <rect x="88" y="0" width="2" height="50" fill="#333"/>
+    </g>
+    
+    <!-- 右側テキスト -->
+    <text x="520" y="260" font-family="Arial, sans-serif" font-size="14" fill="#999" text-anchor="end">有効期限なし</text>
+    <text x="520" y="285" font-family="Arial, sans-serif" font-size="14" fill="#999" text-anchor="end">全国百貨店共通</text>
+  </g>
+  
+  <!-- アクセント装飾（コイン） -->
+  <circle cx="680" y="150" r="40" fill="#fcc419" opacity="0.3"/>
+  <text x="680" y="165" font-family="Arial, sans-serif" font-size="36" font-weight="bold" fill="#f59f00" text-anchor="middle">¥</text>
+</svg>
