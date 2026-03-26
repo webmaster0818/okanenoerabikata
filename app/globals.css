@@ -52,11 +52,49 @@ body {
 }
 
 /* Article content styles */
-.article-content h1,
-.article-content h2,
-.article-content h3,
-.article-content h4 {
+.article-content h1 {
   color: #1a1a1a;
+  background: linear-gradient(to right, #2563eb 4px, #eff6ff 4px);
+  padding: 1rem 1rem 1rem 1.5rem;
+  border-radius: 4px;
+  margin-top: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.article-content h2 {
+  color: #1e40af;
+  border-left: 6px solid #2563eb;
+  padding-left: 1rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  background-color: #f8fafc;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  border-radius: 2px;
+}
+
+.article-content h3 {
+  color: #1e3a8a;
+  border-bottom: 3px solid #3b82f6;
+  padding-bottom: 0.5rem;
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.article-content h4 {
+  color: #1e293b;
+  position: relative;
+  padding-left: 1.5rem;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.article-content h4::before {
+  content: "■";
+  color: #3b82f6;
+  position: absolute;
+  left: 0;
+  font-size: 0.875em;
 }
 
 .article-content p {
@@ -90,33 +128,54 @@ body {
 .markdown-content h1 {
   font-size: 2rem;
   font-weight: bold;
-  margin-top: 2rem;
-  margin-bottom: 1rem;
   color: #1a1a1a;
+  background: linear-gradient(to right, #2563eb 4px, #eff6ff 4px);
+  padding: 1rem 1rem 1rem 1.5rem;
+  border-radius: 4px;
+  margin-top: 2rem;
+  margin-bottom: 1.5rem;
 }
 
 .markdown-content h2 {
   font-size: 1.75rem;
   font-weight: bold;
-  margin-top: 1.5rem;
-  margin-bottom: 0.75rem;
-  color: #1a1a1a;
+  color: #1e40af;
+  border-left: 6px solid #2563eb;
+  padding-left: 1rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  background-color: #f8fafc;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  border-radius: 2px;
 }
 
 .markdown-content h3 {
   font-size: 1.5rem;
   font-weight: bold;
-  margin-top: 1.25rem;
-  margin-bottom: 0.5rem;
-  color: #1a1a1a;
+  color: #1e3a8a;
+  border-bottom: 3px solid #3b82f6;
+  padding-bottom: 0.5rem;
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
 }
 
 .markdown-content h4 {
   font-size: 1.25rem;
   font-weight: 600;
+  color: #1e293b;
+  position: relative;
+  padding-left: 1.5rem;
   margin-top: 1rem;
   margin-bottom: 0.5rem;
-  color: #1a1a1a;
+}
+
+.markdown-content h4::before {
+  content: "■";
+  color: #3b82f6;
+  position: absolute;
+  left: 0;
+  font-size: 0.875em;
 }
 
 .markdown-content p {
