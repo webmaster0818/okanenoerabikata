@@ -47,31 +47,6 @@ const faqs = [
 export default function FaqPage() {
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* ヘッダー */}
-      <header className="bg-white shadow-sm">
-        <div className="container mx-auto px-4 py-6">
-          <Link href="/" className="text-blue-600 hover:text-blue-800 mb-2 inline-block">
-            ← トップページに戻る
-          </Link>
-          <h1 className="text-2xl md:text-3xl font-bold text-gray-900">
-            よくある質問（FAQ）
-          </h1>
-          <p className="text-sm text-gray-600 mt-2">
-            先払い買取に関するよくある質問と回答
-          </p>
-          
-          {/* ナビゲーション */}
-          <nav className="mt-4 border-t pt-4">
-            <ul className="flex flex-wrap gap-4 text-sm">
-              <li><Link href="/" className="text-gray-700 hover:text-blue-600">トップ</Link></li>
-              <li><Link href="/comparison" className="text-gray-700 hover:text-blue-600">業者比較</Link></li>
-              <li><Link href="/articles/what-is-advance-purchase" className="text-gray-700 hover:text-blue-600">先払い買取とは</Link></li>
-              <li><Link href="/faq" className="text-blue-600 font-semibold">FAQ</Link></li>
-            </ul>
-          </nav>
-        </div>
-      </header>
-
       {/* パンくずリスト */}
       <Breadcrumb items={[
         { name: 'よくある質問', url: '/faq' }

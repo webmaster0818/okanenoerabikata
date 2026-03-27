@@ -4,30 +4,6 @@ import Breadcrumb from '@/app/components/Breadcrumb'
 export default function PrivacyPage() {
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* ヘッダー */}
-      <header className="bg-white shadow-sm">
-        <div className="container mx-auto px-4 py-6">
-          <Link href="/" className="text-blue-600 hover:text-blue-800 mb-2 inline-block">
-            ← トップページに戻る
-          </Link>
-          <h1 className="text-2xl md:text-3xl font-bold text-gray-900">
-            プライバシーポリシー
-          </h1>
-          <p className="text-sm text-gray-600 mt-2">
-            個人情報の取り扱いについて
-          </p>
-          
-          {/* ナビゲーション */}
-          <nav className="mt-4 border-t pt-4">
-            <ul className="flex flex-wrap gap-4 text-sm">
-              <li><Link href="/" className="text-gray-700 hover:text-blue-600">トップ</Link></li>
-              <li><Link href="/comparison" className="text-gray-700 hover:text-blue-600">業者比較</Link></li>
-              <li><Link href="/faq" className="text-gray-700 hover:text-blue-600">FAQ</Link></li>
-            </ul>
-          </nav>
-        </div>
-      </header>
-
       {/* パンくずリスト */}
       <Breadcrumb items={[
         { name: 'プライバシーポリシー', url: '/privacy' }
