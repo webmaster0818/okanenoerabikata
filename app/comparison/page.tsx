@@ -69,8 +69,34 @@ const companies = [
 ]
 
 export default function ComparisonPage() {
+  // 構造化データ: ItemList (ランキング)
+  const itemListSchema = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "itemListElement": companies.map((company, index) => ({
+      "@type": "ListItem",
+      "position": index + 1,
+      "item": {
+        "@type": "LocalBusiness",
+        "name": company.name,
+        "url": company.url,
+        "description": `先払い買取率${company.advanceRate}、郵送買取率${company.mailRate}、${company.speed}対応の${company.products}買取業者`,
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "JP"
+        }
+      }
+    }))
+  };
+
   return (
     <div className="min-h-screen bg-gray-50">
+      {/* ItemList Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListSchema) }}
+      />
+
       <HamburgerMenu />
       <Header />
 
