@@ -63,6 +63,15 @@ export default function HamburgerMenu() {
               📊 業者比較
             </Link>
 
+            {/* 記事一覧 */}
+            <Link
+              href="/articles"
+              onClick={closeMenu}
+              className="block px-4 py-3 rounded-lg hover:bg-slate-700 transition-colors"
+            >
+              📚 記事一覧
+            </Link>
+
             {/* 主要記事 */}
             <div className="pt-4">
               <h3 className="text-sm font-bold text-slate-400 px-4 mb-2">主要記事</h3>

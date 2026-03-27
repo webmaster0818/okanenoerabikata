@@ -90,6 +90,18 @@ const articleMap: Record<string, { file: string; title: string }> = {
   'vs-deferred': {
     file: '22_先払い買取_後払い買取_違い.md',
     title: '先払い買取と後払い買取の違いを徹底比較｜どちらを選ぶべき？【2026年最新版】'
+  },
+  'line': {
+    file: '23_先払い買取_LINE.md',
+    title: '先払い買取でLINE完結の業者4選｜登録方法と注意点【2026年最新版】'
+  },
+  'no-employment-check': {
+    file: '24_先払い買取_在籍確認なし.md',
+    title: '先払い買取で在籍確認なしの業者4選｜プライバシー重視の方へ【2026年最新版】'
+  },
+  'no-screening-instant': {
+    file: '25_先払い買取_審査なし即日.md',
+    title: '先払い買取で審査なし＆即日の業者4選｜最短5分入金【2026年最新版】'
   }
 }
 

@@ -62,6 +62,12 @@ export default function Header() {
                 </Link>
               </li>
               <li>
+                <Link href="/articles" 
+                  className="px-3 md:px-4 py-1.5 rounded-md text-gray-300 hover:text-white hover:bg-white/5 font-medium text-xs md:text-sm transition-colors">
+                  記事一覧
+                </Link>
+              </li>
+              <li>
                 <Link href="/articles/what-is-advance-purchase" 
                   className="px-3 md:px-4 py-1.5 rounded-md text-gray-300 hover:text-white hover:bg-white/5 font-medium text-xs md:text-sm transition-colors">
                   先払い買取とは
