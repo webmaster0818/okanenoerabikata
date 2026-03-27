@@ -41,6 +41,42 @@ export default function Header() {
           </div>
         </div>
       </div>
+
+      {/* ナビゲーションバー */}
+      <div style={{ 
+        background: 'linear-gradient(135deg, #1a3358, #243f6b)',
+        borderBottom: '1px solid rgba(255,255,255,0.04)'
+      }}>
+        <div className="container mx-auto px-4">
+          <nav className="py-2 overflow-x-auto">
+            <ul className="flex gap-1 text-sm whitespace-nowrap">
+              <li>
+                <Link href="/" className="px-3 md:px-4 py-1.5 rounded-md text-gray-300 hover:text-white hover:bg-white/5 font-medium text-xs md:text-sm transition-colors">
+                  トップ
+                </Link>
+              </li>
+              <li>
+                <Link href="/comparison" 
+                  className="px-3 md:px-4 py-1.5 rounded-md text-gray-300 hover:text-white hover:bg-white/5 font-medium text-xs md:text-sm transition-colors">
+                  業者比較
+                </Link>
+              </li>
+              <li>
+                <Link href="/articles/what-is-advance-purchase" 
+                  className="px-3 md:px-4 py-1.5 rounded-md text-gray-300 hover:text-white hover:bg-white/5 font-medium text-xs md:text-sm transition-colors">
+                  先払い買取とは
+                </Link>
+              </li>
+              <li>
+                <Link href="/faq" 
+                  className="px-3 md:px-4 py-1.5 rounded-md text-gray-300 hover:text-white hover:bg-white/5 font-medium text-xs md:text-sm transition-colors">
+                  よくある質問
+                </Link>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
     </header>
   )
 }
