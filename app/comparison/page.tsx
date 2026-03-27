@@ -1,4 +1,6 @@
 import Link from 'next/link'
+import Header from '@/app/components/Header'
+import HamburgerMenu from '@/app/components/HamburgerMenu'
 import Breadcrumb from '@/app/components/Breadcrumb'
 
 const companies = [
@@ -59,6 +61,9 @@ const companies = [
 export default function ComparisonPage() {
   return (
     <div className="min-h-screen bg-gray-50">
+      <HamburgerMenu />
+      <Header />
+
       {/* パンくずリスト */}
       <Breadcrumb items={[
         { name: '業者比較・ランキング', url: '/comparison' }

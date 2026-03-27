@@ -1,4 +1,6 @@
 import Link from 'next/link'
+import Header from '@/app/components/Header'
+import HamburgerMenu from '@/app/components/HamburgerMenu'
 import Breadcrumb from '@/app/components/Breadcrumb'
 
 const faqs = [
@@ -47,6 +49,9 @@ const faqs = [
 export default function FaqPage() {
   return (
     <div className="min-h-screen bg-gray-50">
+      <HamburgerMenu />
+      <Header />
+
       {/* パンくずリスト */}
       <Breadcrumb items={[
         { name: 'よくある質問', url: '/faq' }

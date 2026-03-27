@@ -5,6 +5,8 @@ import path from 'path'
 import { remark } from 'remark'
 import html from 'remark-html'
 import remarkGfm from 'remark-gfm'
+import Header from '@/app/components/Header'
+import HamburgerMenu from '@/app/components/HamburgerMenu'
 import Breadcrumb from '@/app/components/Breadcrumb'
 
 // 記事のマッピング
@@ -162,6 +164,9 @@ export default async function ArticlePage({ params }: Props) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
       />
+
+      <HamburgerMenu />
+      <Header />
 
       {/* パンくずリスト */}
       <Breadcrumb items={[
