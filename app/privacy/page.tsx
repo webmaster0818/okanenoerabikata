@@ -1,7 +1,17 @@
 import Link from 'next/link'
+import type { Metadata } from "next"
 import Header from '@/app/components/Header'
 import HamburgerMenu from '@/app/components/HamburgerMenu'
 import Breadcrumb from '@/app/components/Breadcrumb'
+
+export const metadata: Metadata = {
+  title: "プライバシーポリシー｜お金の選び方研究所",
+  description: "お金の選び方研究所のプライバシーポリシー。個人情報の取り扱い、Cookie利用について掲載しています。",
+  robots: {
+    index: false,
+    follow: false,
+  },
+}
 
 export default function PrivacyPage() {
   return (

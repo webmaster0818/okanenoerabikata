@@ -1,7 +1,17 @@
 import Link from 'next/link'
+import type { Metadata } from "next"
 import Header from '@/app/components/Header'
 import HamburgerMenu from '@/app/components/HamburgerMenu'
 import Breadcrumb from '@/app/components/Breadcrumb'
+
+export const metadata: Metadata = {
+  title: "よくある質問（FAQ）｜先払い買取の疑問を徹底解説｜お金の選び方研究所",
+  description: "先払い買取のよくある質問に回答。審査、在籍確認、発送期限、違法業者の見分け方など、利用前の不安を解消。2026年最新情報。",
+  robots: {
+    index: false,
+    follow: false,
+  },
+}
 
 const faqs = [
   {

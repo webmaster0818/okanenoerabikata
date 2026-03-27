@@ -1,7 +1,17 @@
 import Link from 'next/link'
+import type { Metadata } from "next"
 import Header from '@/app/components/Header'
 import HamburgerMenu from '@/app/components/HamburgerMenu'
 import Breadcrumb from '@/app/components/Breadcrumb'
+
+export const metadata: Metadata = {
+  title: "先払い買取業者比較ランキング｜買取率・スピード・安全性で厳選TOP4【2026年最新版】",
+  description: "先払い買取優良業者4社を買取率・スピード・安全性で徹底比較。最高買取率95%、最短5分入金。古物商許可番号掲載、違法業者の見分け方も解説。2026年最新ランキング。",
+  robots: {
+    index: false,
+    follow: false,
+  },
+}
 
 const companies = [
   {

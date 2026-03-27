@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import type { Metadata } from "next"
 import { notFound } from 'next/navigation'
 import fs from 'fs'
 import path from 'path'
@@ -113,6 +114,27 @@ export async function generateStaticParams() {
   return Object.keys(articleMap).map(slug => ({ slug }))
 }
 
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { slug } = await params
+  const article = articleMap[slug]
+  
+  if (!article) {
+    return {
+      title: '記事が見つかりません｜お金の選び方研究所',
+      robots: { index: false, follow: false },
+    }
+  }
+
+  return {
+    title: `${article.title}｜お金の選び方研究所`,
+    description: `${article.title}について詳しく解説。2026年最新情報で安全に利用する方法、注意点、優良業者の選び方をご紹介。`,
+    robots: {
+      index: false,
+      follow: false,
+    },
+  }
+}
+
 async function markdownToHtml(markdown: string) {
   const result = await remark()
     .use(remarkGfm)
@@ -217,6 +239,22 @@ export default async function ArticlePage({ params }: Props) {
                 </Link>
               ))}
           </div>
+        </section>
+
+        {/* CTA: 業者比較へ誘導 */}
+        <section className="mt-12 bg-gradient-to-r from-blue-600 to-blue-800 rounded-lg p-8 text-white text-center">
+          <h2 className="text-2xl md:text-3xl font-bold mb-4">
+            安全な先払い買取業者を比較する
+          </h2>
+          <p className="mb-6 text-blue-100">
+            買取率・スピード・安全性で厳選した優良業者TOP4を徹底比較。古物商許可取得済みの信頼できる業者のみを掲載しています。
+          </p>
+          <Link
+            href="/comparison"
+            className="inline-block bg-white text-blue-600 font-bold px-8 py-4 rounded-lg hover:bg-gray-100 transition-colors shadow-lg"
+          >
+            業者比較ページを見る →
+          </Link>
         </section>
       </main>
 

@@ -1,7 +1,17 @@
 import Link from 'next/link'
+import type { Metadata } from "next"
 import Header from '@/app/components/Header'
 import HamburgerMenu from '@/app/components/HamburgerMenu'
 import Breadcrumb from '@/app/components/Breadcrumb'
+
+export const metadata: Metadata = {
+  title: "記事一覧｜先払い買取の全知識【23記事】基礎から詐欺対策まで｜お金の選び方研究所",
+  description: "先払い買取に関する全23記事を掲載。基礎知識、安全性、リスク対策、業者比較、利用条件など6カテゴリーに分類。2026年最新情報で違法業者の見分け方、トラブル回避法を徹底解説。",
+  robots: {
+    index: false,
+    follow: false,
+  },
+}
 
 // 全記事データ
 const allArticles = [
