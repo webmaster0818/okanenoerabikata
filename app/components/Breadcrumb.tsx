@@ -12,7 +12,7 @@ interface BreadcrumbProps {
 export default function Breadcrumb({ items }: BreadcrumbProps) {
   // ホームを常に最初に追加
   const allItems = [
-    { name: 'ホーム', url: '/' },
+    { name: '先払い買取TOP', url: '/' },
     ...items
   ]
 
