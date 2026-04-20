@@ -270,146 +270,116 @@ export default function Home() {
         </div>
       </header>
 
-      {/* ヒーローセクション */}
+      {/* ヒーローセクション - キャラクター会話形式 */}
       <section className="relative overflow-hidden" style={{
-        background: 'linear-gradient(160deg, #1e3a5f 0%, #2a4a7f 30%, #4c6ef5 60%, #5c7cfa 80%, #748ffc 100%)'
+        background: 'linear-gradient(160deg, #f0f4ff 0%, #e8eeff 50%, #f5f0ff 100%)'
       }}>
-        {/* 装飾エフェクト */}
-        <div className="absolute inset-0 overflow-hidden">
-          {/* 光る球体 */}
-          <div className="absolute" style={{
-            top: '-80px',
-            right: '-60px',
-            width: '400px',
-            height: '400px',
-            background: 'radial-gradient(circle, rgba(76,110,245,0.15) 0%, transparent 70%)',
-            borderRadius: '50%'
-          }}></div>
-          <div className="absolute" style={{
-            bottom: '-120px',
-            left: '-80px',
-            width: '500px',
-            height: '500px',
-            background: 'radial-gradient(circle, rgba(252,196,25,0.08) 0%, transparent 70%)',
-            borderRadius: '50%'
-          }}></div>
-          {/* グリッドパターン */}
-          <div className="absolute inset-0" style={{
-            backgroundImage: 'linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px)',
-            backgroundSize: '60px 60px'
-          }}></div>
-        </div>
-
-        <div className="container mx-auto px-4 py-8 md:py-12 relative">
-          <div className="text-center max-w-3xl mx-auto">
-            {/* バッジ */}
-            <div className="inline-flex items-center gap-2 mb-5 px-4 py-1.5 rounded-full" style={{
-              background: 'linear-gradient(135deg, rgba(252,196,25,0.15), rgba(245,159,0,0.1))',
-              border: '1px solid rgba(252,196,25,0.3)',
-              backdropFilter: 'blur(8px)'
-            }}>
-              <span style={{
-                width: '6px',
-                height: '6px',
-                background: '#fcc419',
-                borderRadius: '50%',
-                boxShadow: '0 0 8px rgba(252,196,25,0.6)'
-              }}></span>
-              <span className="text-yellow-300 text-xs font-bold tracking-wider">2026年3月 最新版</span>
-            </div>
-
-            {/* タイトル */}
-            <h2 className="text-3xl md:text-4xl font-black leading-tight mb-3">
-              <span style={{
-                background: 'linear-gradient(135deg, #ffd43b 0%, #fab005 40%, #fcc419 60%, #ffe066 100%)',
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
-                backgroundClip: 'text',
-                filter: 'drop-shadow(0 2px 8px rgba(252,196,25,0.4))'
-              }}>先払い買取</span>
-              <span style={{
-                background: 'linear-gradient(135deg, #ffffff 0%, #dbe4ff 50%, #bac8ff 100%)',
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
-                backgroundClip: 'text',
-                filter: 'drop-shadow(0 2px 8px rgba(255,255,255,0.2))'
-              }}>で即日現金化</span>
-            </h2>
-            <p className="text-base md:text-lg leading-relaxed max-w-xl mx-auto text-white" style={{ textShadow: '0 1px 6px rgba(0,0,0,0.15)' }}>
-              先払い買取は、商品券・ギフトカードを<span style={{ color: '#ffd43b', fontWeight: 600 }}>商品発送前に現金化</span>できるサービス。<br className="hidden md:block" />
-              古物商許可取得業者のみ厳選。<span style={{ color: '#ffd43b', fontWeight: 600 }}>最高買取率95%、最短5分入金</span>で急な資金ニーズに対応します。
-            </p>
-
-            {/* 統計カード */}
-            <div className="flex flex-wrap justify-center gap-4 mt-10 mb-6">
-              <div className="flex-1 min-w-[130px] max-w-[180px] rounded-xl p-4 text-center" style={{
-                background: 'rgba(255,255,255,0.15)',
-                border: '1px solid rgba(255,255,255,0.25)',
-                backdropFilter: 'blur(12px)'
-              }}>
-                <div className="flex items-center justify-center gap-1 mb-1">
-                  <span style={{
-                    fontSize: '30px',
-                    fontWeight: 900,
-                    background: 'linear-gradient(135deg, #ffd43b, #fab005)',
-                    WebkitBackgroundClip: 'text',
-                    WebkitTextFillColor: 'transparent',
-                    backgroundClip: 'text',
-                    filter: 'drop-shadow(0 1px 3px rgba(252,196,25,0.4))'
-                  }}>4</span>
-                  <span className="text-sm font-bold" style={{ color: '#ffd43b' }}>社</span>
-                </div>
-                <p className="text-[10px] font-semibold tracking-wider text-white opacity-85">厳選業者数</p>
-              </div>
-              <div className="flex-1 min-w-[130px] max-w-[180px] rounded-xl p-4 text-center" style={{
-                background: 'rgba(255,255,255,0.15)',
-                border: '1px solid rgba(255,255,255,0.25)',
-                backdropFilter: 'blur(12px)'
-              }}>
-                <div className="flex items-center justify-center gap-0.5 mb-1">
-                  <span className="text-xs font-medium text-white opacity-85">最大</span>
-                  <span style={{
-                    fontSize: '30px',
-                    fontWeight: 900,
-                    background: 'linear-gradient(135deg, #51cf66, #22c55e)',
-                    WebkitBackgroundClip: 'text',
-                    WebkitTextFillColor: 'transparent',
-                    backgroundClip: 'text',
-                    filter: 'drop-shadow(0 1px 3px rgba(34,197,94,0.4))'
-                  }}>95</span>
-                  <span style={{ fontSize: '14px', fontWeight: 700, color: '#51cf66' }}>%</span>
-                </div>
-                <p className="text-[10px] font-semibold tracking-wider text-white opacity-85">最高買取率</p>
-              </div>
-              <div className="flex-1 min-w-[130px] max-w-[180px] rounded-xl p-4 text-center" style={{
-                background: 'rgba(255,255,255,0.15)',
-                border: '1px solid rgba(255,255,255,0.25)',
-                backdropFilter: 'blur(12px)'
-              }}>
-                <div className="flex items-center justify-center gap-0.5 mb-1">
-                  <span style={{
-                    fontSize: '30px',
-                    fontWeight: 900,
-                    background: 'linear-gradient(135deg, #74c0fc, #339af0)',
-                    WebkitBackgroundClip: 'text',
-                    WebkitTextFillColor: 'transparent',
-                    backgroundClip: 'text',
-                    filter: 'drop-shadow(0 1px 3px rgba(51,154,240,0.4))'
-                  }}>5</span>
-                  <span className="text-sm font-bold" style={{ color: '#74c0fc' }}>分</span>
-                </div>
-                <p className="text-[10px] font-semibold tracking-wider text-white opacity-85">最短入金時間</p>
+        <div className="container mx-auto px-4 py-8 md:py-12">
+          {/* メインビジュアル: キャラクター + テキスト */}
+          <div className="flex flex-col md:flex-row items-center gap-6 md:gap-10">
+            {/* 左: 困っている利用者 */}
+            <div className="flex-shrink-0 relative">
+              <img src="/images/characters/user-worried.png" alt="お金に困っている利用者" className="w-32 md:w-44 h-auto" />
+              <div className="absolute -top-2 -right-4 md:right-auto md:-left-4 bg-white rounded-2xl rounded-bl-none shadow-md px-4 py-2 max-w-[180px]">
+                <p className="text-xs text-gray-700 font-medium">今月ピンチ…<br />すぐに現金が必要なの😢</p>
               </div>
             </div>
 
-            {/* 注意喚起バナー */}
-            <div className="mt-6 px-4 py-3 rounded-lg" style={{
-              background: 'rgba(255,243,191,0.12)',
-              border: '1px solid rgba(255,243,191,0.3)'
-            }}>
-              <p className="text-xs text-white opacity-90">
-                ⚠️ 本サイトは先払い買取サービスの利用を推奨するものではありません。あくまで情報提供と注意喚起を目的としており、取引の可否や判断は利用者ご自身の責任においておこなってください。
+            {/* 中央: メインコピー */}
+            <div className="flex-1 text-center md:text-left">
+              <div className="inline-flex items-center gap-2 mb-4 px-4 py-1.5 rounded-full bg-blue-100 border border-blue-200">
+                <span className="w-2 h-2 bg-blue-500 rounded-full animate-pulse"></span>
+                <span className="text-blue-700 text-xs font-bold">2026年4月 最新版</span>
+              </div>
+
+              <h2 className="text-3xl md:text-4xl font-black leading-tight mb-4">
+                <span className="text-[#1e3a5f]">先払い買取</span>で<br />
+                <span style={{
+                  background: 'linear-gradient(135deg, #f59f00, #fcc419)',
+                  WebkitBackgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent',
+                  backgroundClip: 'text'
+                }}>最短5分</span>
+                <span className="text-[#1e3a5f]">で現金化</span>
+              </h2>
+
+              <p className="text-sm md:text-base text-gray-600 leading-relaxed mb-6 max-w-lg">
+                商品券・ギフトカードを<strong className="text-[#1e3a5f]">発送前に現金化</strong>できるサービス。<br />
+                古物商許可取得の<strong className="text-[#1e3a5f]">優良業者4社</strong>を厳選比較しました。
               </p>
+
+              {/* 統計バッジ横並び */}
+              <div className="flex flex-wrap justify-center md:justify-start gap-3 mb-6">
+                <div className="bg-white rounded-xl px-4 py-3 shadow-sm border border-gray-100 text-center">
+                  <p className="text-2xl font-black text-[#1e3a5f]">4<span className="text-sm font-bold">社</span></p>
+                  <p className="text-[10px] text-gray-500 font-medium">厳選業者</p>
+                </div>
+                <div className="bg-white rounded-xl px-4 py-3 shadow-sm border border-gray-100 text-center">
+                  <p className="text-2xl font-black text-green-600">95<span className="text-sm font-bold">%</span></p>
+                  <p className="text-[10px] text-gray-500 font-medium">最高買取率</p>
+                </div>
+                <div className="bg-white rounded-xl px-4 py-3 shadow-sm border border-gray-100 text-center">
+                  <p className="text-2xl font-black text-blue-600">5<span className="text-sm font-bold">分</span></p>
+                  <p className="text-[10px] text-gray-500 font-medium">最短入金</p>
+                </div>
+              </div>
+
+              <Link href="#ranking" className="inline-block bg-[#1e3a5f] hover:bg-[#152d47] text-white font-bold px-8 py-3 rounded-xl transition shadow-lg text-sm">
+                おすすめ業者を見る ↓
+              </Link>
+            </div>
+
+            {/* 右: 指南役アドバイザー */}
+            <div className="flex-shrink-0 relative">
+              <img src="/images/characters/advisor.png" alt="先払い買取アドバイザー" className="w-32 md:w-44 h-auto" />
+              <div className="absolute -top-2 -left-4 md:left-auto md:-right-4 bg-[#1e3a5f] rounded-2xl rounded-br-none shadow-md px-4 py-2 max-w-[200px]">
+                <p className="text-xs text-white font-medium">安心してください！<br />優良業者だけを<br />厳選しました💼</p>
+              </div>
+            </div>
+          </div>
+
+          {/* 注意喚起バナー */}
+          <div className="mt-8 px-4 py-3 rounded-xl bg-amber-50 border border-amber-200 max-w-3xl mx-auto">
+            <p className="text-xs text-gray-700">
+              ⚠️ 本サイトは先払い買取サービスの利用を推奨するものではありません。あくまで情報提供と注意喚起を目的としており、取引の可否や判断は利用者ご自身の責任においておこなってください。
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* 利用の流れ（キャラクター付き） */}
+      <section className="bg-white py-10">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-8">
+            <h2 className="text-xl md:text-2xl font-bold text-[#1e3a5f] mb-2">先払い買取の流れ</h2>
+            <p className="text-sm text-gray-500">たった3ステップでカンタン</p>
+          </div>
+          <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8 max-w-3xl mx-auto">
+            <div className="flex-1 bg-blue-50 rounded-2xl p-5 text-center border border-blue-100">
+              <div className="w-10 h-10 bg-[#1e3a5f] text-white rounded-full flex items-center justify-center font-bold mx-auto mb-3">1</div>
+              <p className="font-bold text-sm text-[#1e3a5f] mb-1">業者に申込み</p>
+              <p className="text-xs text-gray-500">LINEやWebフォームから<br />最短1分で申込完了</p>
+            </div>
+            <div className="text-2xl text-gray-300 hidden md:block">→</div>
+            <div className="text-gray-300 md:hidden">↓</div>
+            <div className="flex-1 bg-green-50 rounded-2xl p-5 text-center border border-green-100">
+              <div className="w-10 h-10 bg-green-600 text-white rounded-full flex items-center justify-center font-bold mx-auto mb-3">2</div>
+              <p className="font-bold text-sm text-green-700 mb-1">査定＆入金</p>
+              <p className="text-xs text-gray-500">最短5分で査定完了<br />即日お振込み</p>
+            </div>
+            <div className="text-2xl text-gray-300 hidden md:block">→</div>
+            <div className="text-gray-300 md:hidden">↓</div>
+            <div className="flex-1 bg-amber-50 rounded-2xl p-5 text-center border border-amber-100">
+              <div className="w-10 h-10 bg-amber-500 text-white rounded-full flex items-center justify-center font-bold mx-auto mb-3">3</div>
+              <p className="font-bold text-sm text-amber-700 mb-1">商品を発送</p>
+              <p className="text-xs text-gray-500">入金後に商品券を<br />業者に発送するだけ</p>
+            </div>
+          </div>
+          {/* キャラクターコメント */}
+          <div className="flex items-center justify-center gap-3 mt-6">
+            <img src="/images/characters/user-happy.png" alt="" className="w-16 h-auto" />
+            <div className="bg-gray-100 rounded-2xl rounded-bl-none px-4 py-2">
+              <p className="text-xs text-gray-700">え、こんなに簡単なの！？<br />これなら私でもすぐできそう✨</p>
             </div>
           </div>
         </div>
