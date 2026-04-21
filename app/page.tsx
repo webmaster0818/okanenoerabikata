@@ -331,7 +331,7 @@ export default function Home() {
 
             {/* 右: 指南役アドバイザー */}
             <div className="flex-shrink-0 flex flex-row-reverse md:flex-col items-center gap-3 md:gap-0 md:relative">
-              <img src="/images/characters/advisor.png" alt="先払い買取アドバイザー" className="w-28 md:w-56 h-auto" />
+              <img src="/images/characters/advisor.png" alt="先払い買取アドバイザー" className="w-40 md:w-80 h-auto" />
               <div className="relative md:absolute md:-top-2 md:left-auto md:-right-4 bg-[#1e3a5f] rounded-2xl rounded-br-none shadow-md px-4 py-2 max-w-[200px]">
                 <p className="text-xs text-white font-medium">安心してください！<br />優良業者だけを<br />厳選しました💼</p>
               </div>
