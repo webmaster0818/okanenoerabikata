@@ -278,9 +278,9 @@ export default function Home() {
           {/* メインビジュアル: キャラクター + テキスト */}
           <div className="flex flex-col md:flex-row items-center gap-6 md:gap-10">
             {/* 左: 困っている利用者 */}
-            <div className="flex-shrink-0 relative">
-              <img src="/images/characters/user-worried.png" alt="お金に困っている利用者" className="w-32 md:w-44 h-auto" />
-              <div className="absolute -top-2 -right-4 md:right-auto md:-left-4 bg-white rounded-2xl rounded-bl-none shadow-md px-4 py-2 max-w-[180px]">
+            <div className="flex-shrink-0 flex flex-row md:flex-col items-center gap-3 md:gap-0 md:relative">
+              <img src="/images/characters/user-worried.png" alt="お金に困っている利用者" className="w-20 md:w-44 h-auto" />
+              <div className="relative md:absolute md:-top-2 md:right-auto md:-left-4 bg-white rounded-2xl rounded-bl-none shadow-md px-4 py-2 max-w-[180px]">
                 <p className="text-xs text-gray-700 font-medium">今月ピンチ…<br />すぐに現金が必要なの😢</p>
               </div>
             </div>
@@ -330,9 +330,9 @@ export default function Home() {
             </div>
 
             {/* 右: 指南役アドバイザー */}
-            <div className="flex-shrink-0 relative">
-              <img src="/images/characters/advisor.png" alt="先払い買取アドバイザー" className="w-32 md:w-44 h-auto" />
-              <div className="absolute -top-2 -left-4 md:left-auto md:-right-4 bg-[#1e3a5f] rounded-2xl rounded-br-none shadow-md px-4 py-2 max-w-[200px]">
+            <div className="flex-shrink-0 flex flex-row-reverse md:flex-col items-center gap-3 md:gap-0 md:relative">
+              <img src="/images/characters/advisor.png" alt="先払い買取アドバイザー" className="w-20 md:w-44 h-auto" />
+              <div className="relative md:absolute md:-top-2 md:left-auto md:-right-4 bg-[#1e3a5f] rounded-2xl rounded-br-none shadow-md px-4 py-2 max-w-[200px]">
                 <p className="text-xs text-white font-medium">安心してください！<br />優良業者だけを<br />厳選しました💼</p>
               </div>
             </div>
