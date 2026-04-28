@@ -412,36 +412,73 @@ export default function Home() {
 
           <div className="bg-white rounded-lg shadow-md p-2 md:p-4">
             <p className="text-sm text-gray-600 text-center mb-4">厳選した信頼性の高い業者を買取率・スピードで比較</p>
-            <div className="overflow-x-auto">
+
+            {/* モバイル: カード型レイアウト */}
+            <div className="md:hidden space-y-4">
+              {recommendedCompanies.map((company) => (
+                <div key={company.id} className="border border-gray-200 rounded-lg overflow-hidden">
+                  <div className="bg-blue-600 text-white px-4 py-2 flex items-center justify-between">
+                    <div className="flex items-center gap-2">
+                      <span className="bg-white text-blue-600 w-7 h-7 rounded-full flex items-center justify-center font-bold text-sm">{company.rank}</span>
+                      <span className="font-bold">{company.name}</span>
+                    </div>
+                    <Link href={`/articles/${company.id}`} className="text-white bg-white/20 px-3 py-1 rounded text-xs font-medium">
+                      詳細 →
+                    </Link>
+                  </div>
+                  <div className="p-4 grid grid-cols-2 gap-3 text-sm">
+                    <div>
+                      <div className="text-xs text-gray-500">先払い買取率</div>
+                      <div className="font-bold text-blue-600">{company.advanceRate}</div>
+                    </div>
+                    <div>
+                      <div className="text-xs text-gray-500">郵送買取率</div>
+                      <div className="font-bold text-blue-600">{company.mailRate}</div>
+                    </div>
+                    <div>
+                      <div className="text-xs text-gray-500">入金スピード</div>
+                      <div className="font-semibold">{company.speed}</div>
+                    </div>
+                    <div>
+                      <div className="text-xs text-gray-500">対応商品</div>
+                      <div className="font-semibold text-xs">{company.products}</div>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* デスクトップ: テーブルレイアウト */}
+            <div className="hidden md:block overflow-x-auto">
               <table className="w-full">
                 <thead className="bg-blue-600 text-white">
                   <tr>
-                    <th className="px-2 md:px-4 py-3 text-left text-sm">順位</th>
-                    <th className="px-2 md:px-4 py-3 text-left text-sm">業者名</th>
-                    <th className="px-2 md:px-4 py-3 text-left text-sm">先払い買取率</th>
-                    <th className="px-2 md:px-4 py-3 text-left text-sm">郵送買取率</th>
-                    <th className="px-2 md:px-4 py-3 text-left text-sm">入金スピード</th>
-                    <th className="px-2 md:px-4 py-3 text-left text-sm">対応商品</th>
-                    <th className="px-2 md:px-4 py-3 text-left text-sm">詳細</th>
+                    <th className="px-4 py-3 text-left text-sm">順位</th>
+                    <th className="px-4 py-3 text-left text-sm">業者名</th>
+                    <th className="px-4 py-3 text-left text-sm">先払い買取率</th>
+                    <th className="px-4 py-3 text-left text-sm">郵送買取率</th>
+                    <th className="px-4 py-3 text-left text-sm">入金スピード</th>
+                    <th className="px-4 py-3 text-left text-sm">対応商品</th>
+                    <th className="px-4 py-3 text-left text-sm">詳細</th>
                   </tr>
                 </thead>
                 <tbody>
                   {recommendedCompanies.map((company) => (
                     <tr key={company.id} className={company.rank % 2 === 1 ? 'bg-gray-50' : 'bg-white'}>
-                      <td className="px-2 md:px-4 py-3">
+                      <td className="px-4 py-3">
                         <div className="flex items-center justify-center w-8 h-8 rounded-full bg-blue-100 text-blue-700 font-bold text-sm">
                           {company.rank}
                         </div>
                       </td>
-                      <td className="px-2 md:px-4 py-3 font-semibold text-sm">{company.name}</td>
-                      <td className="px-2 md:px-4 py-3 text-sm">{company.advanceRate}</td>
-                      <td className="px-2 md:px-4 py-3 text-sm">{company.mailRate}</td>
-                      <td className="px-2 md:px-4 py-3 text-sm">{company.speed}</td>
-                      <td className="px-2 md:px-4 py-3 text-xs">{company.products}</td>
-                      <td className="px-2 md:px-4 py-3">
-                        <Link 
+                      <td className="px-4 py-3 font-semibold text-sm">{company.name}</td>
+                      <td className="px-4 py-3 text-sm">{company.advanceRate}</td>
+                      <td className="px-4 py-3 text-sm">{company.mailRate}</td>
+                      <td className="px-4 py-3 text-sm">{company.speed}</td>
+                      <td className="px-4 py-3 text-xs">{company.products}</td>
+                      <td className="px-4 py-3">
+                        <Link
                           href={`/articles/${company.id}`}
-                          className="text-blue-600 hover:text-blue-800 underline text-xs md:text-sm whitespace-nowrap"
+                          className="text-blue-600 hover:text-blue-800 underline text-sm whitespace-nowrap"
                         >
                           詳細 →
                         </Link>
@@ -451,6 +488,7 @@ export default function Home() {
                 </tbody>
               </table>
             </div>
+
             <p className="text-xs text-gray-600 mt-4 text-center">
               ※各業者の公式サイトに掲載されている情報を引用・整理したものです。適法性・安全性・将来にわたる健全な運営を保証するものではありません。
             </p>

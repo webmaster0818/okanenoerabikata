@@ -202,7 +202,39 @@ export default function ComparisonPage() {
         {/* 比較表 */}
         <section className="mb-12">
           <h2 className="text-2xl font-bold mb-6">業者比較表</h2>
-          <div className="overflow-x-auto">
+
+          {/* モバイル: カード型 */}
+          <div className="md:hidden space-y-4">
+            {companies.map((company) => (
+              <div key={company.id} className="bg-white rounded-lg shadow-md overflow-hidden">
+                <div className="bg-blue-600 text-white px-4 py-2 flex items-center gap-2">
+                  <span className="bg-white text-blue-600 w-7 h-7 rounded-full flex items-center justify-center font-bold text-sm">{company.rank}</span>
+                  <span className="font-bold">{company.name}</span>
+                </div>
+                <div className="p-4 grid grid-cols-2 gap-3 text-sm">
+                  <div>
+                    <div className="text-xs text-gray-500">先払い買取率</div>
+                    <div className="font-bold text-blue-600">{company.advanceRate}</div>
+                  </div>
+                  <div>
+                    <div className="text-xs text-gray-500">郵送買取率</div>
+                    <div className="font-bold text-blue-600">{company.mailRate}</div>
+                  </div>
+                  <div>
+                    <div className="text-xs text-gray-500">入金スピード</div>
+                    <div className="font-semibold">{company.speed}</div>
+                  </div>
+                  <div>
+                    <div className="text-xs text-gray-500">買取可能額</div>
+                    <div className="font-semibold text-xs">{company.amount}</div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* デスクトップ: テーブル */}
+          <div className="hidden md:block overflow-x-auto">
             <table className="w-full bg-white shadow-md rounded-lg overflow-hidden">
               <thead className="bg-blue-600 text-white">
                 <tr>
