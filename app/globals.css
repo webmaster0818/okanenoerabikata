@@ -124,6 +124,58 @@ body {
   background-color: #f9fafb;
 }
 
+/* モバイルで2列テーブルをカード型に変換 */
+@media (max-width: 767px) {
+  .article-content table,
+  .markdown-content table {
+    display: block;
+  }
+  .article-content thead,
+  .markdown-content thead {
+    display: none;
+  }
+  .article-content tbody,
+  .markdown-content tbody {
+    display: block;
+  }
+  .article-content tr,
+  .markdown-content tr {
+    display: block;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    margin-bottom: 0.75rem;
+    padding: 0;
+    overflow: hidden;
+    background: white;
+  }
+  .article-content td,
+  .markdown-content td {
+    display: block;
+    border: none;
+    border-bottom: 1px solid #f3f4f6;
+    padding: 0.5rem 0.75rem;
+    text-align: left;
+    font-size: 0.875rem;
+    line-height: 1.6;
+  }
+  .article-content td:first-child,
+  .markdown-content td:first-child {
+    background-color: #2563eb;
+    color: white;
+    font-weight: 600;
+    font-size: 0.8rem;
+    padding: 0.4rem 0.75rem;
+  }
+  .article-content td:last-child,
+  .markdown-content td:last-child {
+    border-bottom: none;
+  }
+  .article-content tr:nth-child(even),
+  .markdown-content tr:nth-child(even) {
+    background-color: white;
+  }
+}
+
 /* Markdown content styles */
 .markdown-content h1 {
   font-size: 2rem;
