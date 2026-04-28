@@ -3,6 +3,8 @@ import type { Metadata } from "next"
 import Header from '@/app/components/Header'
 import HamburgerMenu from '@/app/components/HamburgerMenu'
 import Breadcrumb from '@/app/components/Breadcrumb'
+import Supervisor from '@/app/components/Supervisor'
+import References from '@/app/components/References'
 
 export const metadata: Metadata = {
   title: "先払い買取業者比較ランキング｜買取率・スピード・安全性で厳選TOP4【2026年最新版】",
@@ -264,6 +266,23 @@ export default function ComparisonPage() {
             参考：<a href="https://www.fsa.go.jp/ordinary/chuui/cashing_chuui2.html" target="_blank" rel="noopener noreferrer" className="text-blue-600 underline">金融庁 注意喚起</a>
           </p>
         </div>
+
+        {/* 15社以上バッジ */}
+        <div className="mt-6 text-center">
+          <span className="inline-block bg-blue-600 text-white text-sm font-bold px-4 py-2 rounded-full shadow">
+            15社以上を比較
+          </span>
+          <p className="text-xs text-gray-500 mt-2">当サイトでは15社以上の先払い買取業者をリストアップし、各業者ページで詳細を解説しています。</p>
+          <Link href="/vendor/reset-ticket" className="text-blue-600 underline text-sm mt-1 inline-block">
+            業者個別レビューを見る →
+          </Link>
+        </div>
+
+        {/* 監修者情報 */}
+        <Supervisor />
+
+        {/* 出典 */}
+        <References />
       </main>
 
       {/* フッター */}

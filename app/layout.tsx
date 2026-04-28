@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import Script from "next/script";
+import ConsultationList from "@/app/components/ConsultationList";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -81,6 +82,12 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         {children}
+        {/* グローバル相談窓口フッター */}
+        <div className="bg-gray-100 border-t border-gray-200 py-6 px-4">
+          <div className="container mx-auto max-w-3xl">
+            <ConsultationList />
+          </div>
+        </div>
       </body>
     </html>
   );

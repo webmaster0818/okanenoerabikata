@@ -43,7 +43,7 @@ export default function Header() {
       </div>
 
       {/* ナビゲーションバー */}
-      <div style={{ 
+      <div style={{
         background: 'linear-gradient(135deg, #1a3358, #243f6b)',
         borderBottom: '1px solid rgba(255,255,255,0.04)'
       }}>
@@ -56,31 +56,39 @@ export default function Header() {
                 </Link>
               </li>
               <li>
-                <Link href="/comparison" 
+                <Link href="/comparison"
                   className="px-3 md:px-4 py-1.5 rounded-md text-gray-300 hover:text-white hover:bg-white/5 font-medium text-xs md:text-sm transition-colors">
                   業者比較
                 </Link>
               </li>
               <li>
-                <Link href="/articles" 
+                <Link href="/articles"
                   className="px-3 md:px-4 py-1.5 rounded-md text-gray-300 hover:text-white hover:bg-white/5 font-medium text-xs md:text-sm transition-colors">
                   記事一覧
                 </Link>
               </li>
               <li>
-                <Link href="/articles/what-is-advance-purchase" 
+                <Link href="/articles/what-is-advance-purchase"
                   className="px-3 md:px-4 py-1.5 rounded-md text-gray-300 hover:text-white hover:bg-white/5 font-medium text-xs md:text-sm transition-colors">
                   先払い買取とは
                 </Link>
               </li>
               <li>
-                <Link href="/faq" 
+                <Link href="/faq"
                   className="px-3 md:px-4 py-1.5 rounded-md text-gray-300 hover:text-white hover:bg-white/5 font-medium text-xs md:text-sm transition-colors">
                   よくある質問
                 </Link>
               </li>
             </ul>
           </nav>
+        </div>
+      </div>
+
+      {/* PR・景表法対応バー + 更新日 */}
+      <div className="bg-yellow-50 py-0.5 px-4">
+        <div className="container mx-auto flex items-center justify-between">
+          <span className="text-[10px] text-gray-400">最終更新日: 2026年4月28日</span>
+          <span className="text-[10px] text-gray-500">PRを含みます</span>
         </div>
       </div>
     </header>

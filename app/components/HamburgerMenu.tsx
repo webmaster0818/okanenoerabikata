@@ -117,10 +117,10 @@ export default function HamburgerMenu() {
               </Link>
             </div>
 
-            {/* 業者詳細 */}
+            {/* 業者詳細（記事） */}
             <div className="pt-4">
               <h3 className="text-sm font-bold text-slate-400 px-4 mb-2">業者詳細</h3>
-              
+
               <Link
                 href="/articles/sheep-ticket"
                 onClick={closeMenu}
@@ -128,7 +128,7 @@ export default function HamburgerMenu() {
               >
                 🐑 シープチケット
               </Link>
-              
+
               <Link
                 href="/articles/ticket-center"
                 onClick={closeMenu}
@@ -136,7 +136,7 @@ export default function HamburgerMenu() {
               >
                 🎫 チケットセンター
               </Link>
-              
+
               <Link
                 href="/articles/turtle-ticket"
                 onClick={closeMenu}
@@ -144,13 +144,123 @@ export default function HamburgerMenu() {
               >
                 🐢 タートルチケット
               </Link>
-              
+
               <Link
                 href="/articles/reset-ticket"
                 onClick={closeMenu}
                 className="block px-4 py-3 rounded-lg hover:bg-slate-700 transition-colors"
               >
                 🔄 リセチケット
+              </Link>
+            </div>
+
+            {/* 業者レビューページ */}
+            <div className="pt-4">
+              <h3 className="text-sm font-bold text-slate-400 px-4 mb-2">業者レビュー（全15社）</h3>
+              <Link
+                href="/vendor/reset-ticket"
+                onClick={closeMenu}
+                className="block px-4 py-2 rounded-lg hover:bg-slate-700 transition-colors text-sm"
+              >
+                リセチケット
+              </Link>
+              <Link
+                href="/vendor/sheep-ticket"
+                onClick={closeMenu}
+                className="block px-4 py-2 rounded-lg hover:bg-slate-700 transition-colors text-sm"
+              >
+                シープチケット
+              </Link>
+              <Link
+                href="/vendor/turtle-ticket"
+                onClick={closeMenu}
+                className="block px-4 py-2 rounded-lg hover:bg-slate-700 transition-colors text-sm"
+              >
+                タートルチケット
+              </Link>
+              <Link
+                href="/vendor/ticket-center"
+                onClick={closeMenu}
+                className="block px-4 py-2 rounded-lg hover:bg-slate-700 transition-colors text-sm"
+              >
+                チケットセンター
+              </Link>
+              <Link
+                href="/vendor/gold-ticket"
+                onClick={closeMenu}
+                className="block px-4 py-2 rounded-lg hover:bg-slate-700 transition-colors text-sm"
+              >
+                ゴールドチケット
+              </Link>
+              <Link
+                href="/vendor/platinum-buyer"
+                onClick={closeMenu}
+                className="block px-4 py-2 rounded-lg hover:bg-slate-700 transition-colors text-sm"
+              >
+                プラチナバイヤー
+              </Link>
+              <Link
+                href="/vendor/speed-cash"
+                onClick={closeMenu}
+                className="block px-4 py-2 rounded-lg hover:bg-slate-700 transition-colors text-sm"
+              >
+                スピードキャッシュ
+              </Link>
+              <Link
+                href="/vendor/rabbit-pay"
+                onClick={closeMenu}
+                className="block px-4 py-2 rounded-lg hover:bg-slate-700 transition-colors text-sm"
+              >
+                ラビットペイ
+              </Link>
+              <Link
+                href="/vendor/mach-kaitori"
+                onClick={closeMenu}
+                className="block px-4 py-2 rounded-lg hover:bg-slate-700 transition-colors text-sm"
+              >
+                マッハ買取
+              </Link>
+              <Link
+                href="/vendor/wing-ticket"
+                onClick={closeMenu}
+                className="block px-4 py-2 rounded-lg hover:bg-slate-700 transition-colors text-sm"
+              >
+                ウイングチケット
+              </Link>
+              <Link
+                href="/vendor/fast-money"
+                onClick={closeMenu}
+                className="block px-4 py-2 rounded-lg hover:bg-slate-700 transition-colors text-sm"
+              >
+                ファストマネー
+              </Link>
+              <Link
+                href="/vendor/sakura-buyer"
+                onClick={closeMenu}
+                className="block px-4 py-2 rounded-lg hover:bg-slate-700 transition-colors text-sm"
+              >
+                サクラバイヤー
+              </Link>
+              <Link
+                href="/vendor/quick-pay"
+                onClick={closeMenu}
+                className="block px-4 py-2 rounded-lg hover:bg-slate-700 transition-colors text-sm"
+              >
+                クイックペイ
+              </Link>
+              <Link
+                href="/vendor/diamond-ticket"
+                onClick={closeMenu}
+                className="block px-4 py-2 rounded-lg hover:bg-slate-700 transition-colors text-sm"
+              >
+                ダイヤモンドチケット
+              </Link>
+              <Link
+                href="/vendor/lightning-pay"
+                onClick={closeMenu}
+                className="block px-4 py-2 rounded-lg hover:bg-slate-700 transition-colors text-sm"
+              >
+                ライトニングペイ
               </Link>
             </div>
 

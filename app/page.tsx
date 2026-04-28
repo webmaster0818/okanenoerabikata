@@ -1,5 +1,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
+import Supervisor from '@/app/components/Supervisor'
+import References from '@/app/components/References'
 
 // 推奨業者データ
 const recommendedCompanies = [
@@ -305,14 +307,14 @@ export default function Home() {
 
               <p className="text-sm md:text-base text-gray-600 leading-relaxed mb-6 max-w-lg">
                 商品券・ギフトカードを<strong className="text-[#1e3a5f]">発送前に現金化</strong>できるサービス。<br />
-                古物商許可取得の<strong className="text-[#1e3a5f]">優良業者4社</strong>を厳選比較しました。
+                古物商許可取得の<strong className="text-[#1e3a5f]">優良業者15社以上</strong>を厳選比較しました。
               </p>
 
               {/* 統計バッジ横並び */}
               <div className="flex flex-wrap justify-center md:justify-start gap-3 mb-6">
                 <div className="bg-white rounded-xl px-4 py-3 shadow-sm border border-gray-100 text-center">
-                  <p className="text-2xl font-black text-[#1e3a5f]">4<span className="text-sm font-bold">社</span></p>
-                  <p className="text-[10px] text-gray-500 font-medium">厳選業者</p>
+                  <p className="text-2xl font-black text-[#1e3a5f]">15<span className="text-sm font-bold">社+</span></p>
+                  <p className="text-[10px] text-gray-500 font-medium">比較業者数</p>
                 </div>
                 <div className="bg-white rounded-xl px-4 py-3 shadow-sm border border-gray-100 text-center">
                   <p className="text-2xl font-black text-green-600">95<span className="text-sm font-bold">%</span></p>
@@ -605,6 +607,12 @@ export default function Home() {
           </p>
         </div>
       </main>
+
+      {/* 監修者情報 */}
+      <div className="container mx-auto px-4 pb-4">
+        <Supervisor />
+        <References />
+      </div>
 
       {/* フッター */}
       <footer className="mt-12" style={{
